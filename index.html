@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mídia Kit 2026 · Manual do Recém-Nascido</title>
+<meta name="description" content="Mídia kit do Manual do Recém-Nascido — Dayane Dos Anjos. Conteúdo real para uma maternidade real. Parcerias com marcas no maior universo materno do Brasil.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2a0b3f">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mídia Kit 2026 · Manual do Recém-Nascido">
+<meta property="og:description" content="Conteúdo real para uma maternidade real. Parcerias de marca com a Day.">
+<meta property="og:image" content="images/web/page-01.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg0:#1a0729;
+    --bg1:#2a0b3f;
+    --plum:#3d1152;
+    --magenta:#a01e69;
+    --magenta2:#c62a80;
+    --pink:#e05a9c;
+    --cream:#f4ece2;
+    --ink:#f6eefc;
+    --radius:18px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',system-ui,sans-serif;
+    background:var(--bg0);
+    color:var(--ink);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* animated background */
+  .bg-fx{position:fixed;inset:0;z-index:0;overflow:hidden;background:
+      radial-gradient(1200px 800px at 15% 10%, #3a0f57 0%, transparent 55%),
+      radial-gradient(1000px 900px at 90% 80%, #6a1450 0%, transparent 55%),
+      linear-gradient(160deg, var(--bg0) 0%, var(--bg1) 55%, #240a37 100%);}
+  .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;mix-blend-mode:screen;will-change:transform}
+  .blob.b1{width:46vw;height:46vw;left:-8vw;top:-6vw;background:#8e1c63;animation:drift1 26s ease-in-out infinite}
+  .blob.b2{width:40vw;height:40vw;right:-6vw;bottom:-8vw;background:#5a2a8f;animation:drift2 31s ease-in-out infinite}
+  .blob.b3{width:30vw;height:30vw;left:40vw;top:55vh;background:#c62a80;opacity:.32;animation:drift1 38s ease-in-out infinite reverse}
+  @keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6vw,4vh) scale(1.12)}}
+  @keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-5vw,-4vh) scale(1.15)}}
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* top progress bar */
+  .progress{position:fixed;top:0;left:0;height:4px;width:0%;z-index:60;
+    background:linear-gradient(90deg,var(--magenta2),var(--pink));box-shadow:0 0 12px rgba(224,90,156,.7);transition:width .1s linear}
+
+  /* brand wordmark */
+  .brandbar{position:fixed;top:16px;left:22px;z-index:55;display:flex;align-items:center;gap:10px;
+    opacity:0;transform:translateY(-8px);transition:.5s;pointer-events:none}
+  .brandbar.show{opacity:1;transform:none}
+  .brandbar .dot{width:9px;height:9px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px var(--pink)}
+  .brandbar span{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#f0d9ec}
+
+  /* dot nav */
+  .dotnav{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:9px}
+  .dotnav button{width:9px;height:9px;border-radius:50%;border:0;padding:0;cursor:pointer;
+    background:rgba(255,255,255,.28);transition:.25s;position:relative}
+  .dotnav button:hover{background:rgba(255,255,255,.6);transform:scale(1.3)}
+  .dotnav button.active{background:var(--pink);box-shadow:0 0 10px var(--pink);transform:scale(1.35)}
+
+  /* stage */
+  main{position:relative;z-index:5}
+  .slide{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:64px 22px;position:relative}
+  .frame{position:relative;width:100%;max-width:var(--maxw);border-radius:var(--radius);overflow:hidden;
+    background:#25082f;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);
+    opacity:0;transform:translateY(46px) scale(.975);transition:opacity .9s cubic-bezier(.16,.8,.3,1),transform .9s cubic-bezier(.16,.8,.3,1)}
+  .frame.in{opacity:1;transform:none}
+  .frame img{display:block;width:100%;height:auto}
+
+  /* clickable reel/contact hotspots */
+  .hot{position:absolute;display:flex;align-items:flex-start;justify-content:center;
+    border-radius:14px;text-decoration:none;z-index:3;
+    transition:background .25s,box-shadow .25s}
+  .hot:hover{background:rgba(224,90,156,.14);box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
+  .hot .play{margin-top:16%;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);
+    display:grid;place-items:center;opacity:0;transform:scale(.6);transition:.25s;
+    box-shadow:0 6px 20px rgba(0,0,0,.4)}
+  .hot:hover .play{opacity:1;transform:scale(1)}
+  .hot .play svg{width:18px;height:18px;fill:var(--magenta);margin-left:3px}
+  .hot.link:hover{background:rgba(224,90,156,.16)}
+
+  /* floating actions */
+  .fabs{position:fixed;right:20px;bottom:20px;z-index:58;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+  .fab{display:flex;align-items:center;gap:9px;text-decoration:none;border:0;cursor:pointer;
+    font-family:inherit;font-weight:600;font-size:14px;color:#fff;padding:12px 16px;border-radius:999px;
+    box-shadow:0 10px 26px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s;white-space:nowrap}
+  .fab:hover{transform:translateY(-2px) scale(1.03)}
+  .fab.wa{background:#25d366;color:#07341a}
+  .fab.pdf{background:rgba(255,255,255,.1);backdrop-filter:blur(6px);color:#f3e6f1;border:1px solid rgba(255,255,255,.22)}
+  .fab svg{width:18px;height:18px;flex:0 0 auto}
+  .fab .lbl{display:inline}
+  @media(max-width:640px){.fab .lbl{display:none}.fab{padding:14px;border-radius:50%}}
+
+  /* scroll hint on hero */
+  .hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:6;
+    display:flex;flex-direction:column;align-items:center;gap:6px;color:#e9cfe6;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    animation:bob 1.8s ease-in-out infinite;opacity:.9}
+  .hint .mouse{width:22px;height:34px;border:2px solid #e9cfe6;border-radius:12px;position:relative}
+  .hint .mouse::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:6px;border-radius:2px;background:#e9cfe6;transform:translateX(-50%);animation:wheel 1.8s infinite}
+  @keyframes wheel{0%{opacity:1;top:6px}70%{opacity:0;top:16px}100%{opacity:0}}
+  @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+
+  /* end note */
+  .endnote{position:relative;z-index:5;text-align:center;padding:10px 22px 70px;color:#caa8c8;font-size:13px;line-height:1.7}
+  .endnote a{color:var(--pink);text-decoration:none;font-weight:600}
+
+  /* preloader */
+  .loader{position:fixed;inset:0;z-index:100;background:var(--bg0);display:grid;place-items:center;transition:opacity .6s,visibility .6s}
+  .loader.hide{opacity:0;visibility:hidden}
+  .loader .wrap{text-align:center}
+  .loader .ring{width:52px;height:52px;border-radius:50%;border:3px solid rgba(255,255,255,.15);border-top-color:var(--pink);margin:0 auto 18px;animation:spin .9s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .loader .t{font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:12px;color:#e9cfe6}
+  .loader .s{font-family:'Anton',sans-serif;font-size:26px;letter-spacing:.02em;margin-top:6px;color:#fff}
+
+  @media (prefers-reduced-motion: reduce){
+    .frame{transition:none;opacity:1;transform:none}
+    .blob{animation:none}
+  }
+</style>
+</head>
+<body>
+  <div class="loader" id="loader"><div class="wrap">
+    <div class="ring"></div>
+    <div class="t">Manual do Recém-Nascido</div>
+    <div class="s">Mídia Kit 2026</div>
+  </div></div>
+
+  <div class="bg-fx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="grain"></div>
+  <div class="progress" id="progress"></div>
+
+  <div class="brandbar" id="brandbar"><i class="dot"></i><span>Mídia Kit · Day</span></div>
+  <nav class="dotnav" id="dotnav" aria-label="Navegação entre páginas"></nav>
+
+  <main id="stage">
+    <!-- slides injected by JS -->
+  </main>
+
+  <div class="endnote">
+    Mídia kit oficial do <strong>Manual do Recém-Nascido</strong> · Dayane Dos Anjos · 2026<br>
+    Fale com a gente: <a href="https://wa.me/5541984302127" target="_blank" rel="noopener">WhatsApp (41) 98430-2127</a>
+    · <a href="mailto:assessoria@manualdorecemnascido.com.br">assessoria@manualdorecemnascido.com.br</a>
+  </div>
+
+  <div class="fabs">
+    <a class="fab pdf" href="midiakit-mrn-2026.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <span class="lbl">Baixar PDF</span>
+    </a>
+    <a class="fab wa" href="https://wa.me/5541984302127?text=Oi!%20Vim%20pelo%20m%C3%ADdia%20kit%20e%20quero%20criar%20com%20voc%C3%AAs." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.516 5.26l-.999 3.648 3.981-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      <span class="lbl">Falar no WhatsApp</span>
+    </a>
+  </div>
+
+<script>
+  // ---- slide config: image + optional clickable hotspots (percent coords of the image) ----
+  var WA = "https://wa.me/5541984302127?text=Oi!%20Vim%20pelo%20m%C3%ADdia%20kit%20e%20quero%20criar%20com%20voc%C3%AAs.";
+  var MAIL = "mailto:assessoria@manualdorecemnascido.com.br";
+  function reel(id){return "https://www.instagram.com/reel/"+id+"/";}
+
+  var SLIDES = [
+    {img:"page-01"},
+    {img:"page-02"},
+    {img:"page-03"},
+    {img:"page-04"},
+    {img:"page-05"},
+    {img:"page-06", hots:[
+      {l:44,t:13,w:27,h:79,href:reel("CiiOy2pNbGq"), play:true}
+    ]},
+    {img:"page-07", hots:[
+      {l:6, t:26,w:20,h:68,href:reel("Cu6pixDvvB_"), play:true},
+      {l:29,t:26,w:20,h:68,href:reel("C34_olPL123"), play:true},
+      {l:52,t:26,w:20,h:68,href:reel("CsYfaZNsxR7"), play:true},
+      {l:75,t:26,w:20,h:68,href:reel("Cv9s0whtBj0"), play:true}
+    ]},
+    {img:"page-08", hots:[
+      {l:6, t:24,w:20,h:70,href:reel("Cu4InyhuNYD"), play:true},
+      {l:29,t:24,w:20,h:70,href:reel("ClTPHERuAGu"), play:true},
+      {l:52,t:24,w:20,h:70,href:reel("CvhWoFNv2Lg"), play:true},
+      {l:75,t:24,w:20,h:70,href:reel("C3Fhx-VrrM6"), play:true}
+    ]},
+    {img:"page-09"},
+    {img:"page-10"},
+    {img:"page-11"},
+    {img:"page-12"},
+    {img:"page-13"},
+    {img:"page-14"},
+    {img:"page-15"},
+    {img:"page-16"},
+    {img:"page-17"},
+    {img:"page-18", hots:[
+      {l:38,t:76,w:34,h:10,href:WA},
+      {l:38,t:86,w:46,h:10,href:MAIL}
+    ]}
+  ];
+
+  var PLAY_SVG = '<span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>';
+  var stage = document.getElementById('stage');
+  var frag = document.createDocumentFragment();
+
+  SLIDES.forEach(function(s, i){
+    var sec = document.createElement('section');
+    sec.className = 'slide';
+    sec.id = 'slide-' + (i+1);
+
+    var frame = document.createElement('div');
+    frame.className = 'frame';
+
+    var img = document.createElement('img');
+    img.src = 'images/web/' + s.img + '.jpg';
+    img.alt = 'Mídia kit página ' + (i+1);
+    img.loading = i < 2 ? 'eager' : 'lazy';
+    img.decoding = 'async';
+    frame.appendChild(img);
+
+    if (s.hots) {
+      s.hots.forEach(function(h){
+        var a = document.createElement('a');
+        a.className = 'hot' + (h.play ? '' : ' link');
+        a.href = h.href;
+        if (h.href.indexOf('mailto:') !== 0) { a.target = '_blank'; a.rel = 'noopener'; }
+        a.style.left = h.l + '%'; a.style.top = h.t + '%';
+        a.style.width = h.w + '%'; a.style.height = h.h + '%';
+        if (h.play) a.innerHTML = PLAY_SVG;
+        a.setAttribute('aria-label', h.play ? 'Ver reel no Instagram' : 'Abrir contato');
+        frame.appendChild(a);
+      });
+    }
+
+    sec.appendChild(frame);
+
+    if (i === 0) {
+      var hint = document.createElement('div');
+      hint.className = 'hint';
+      hint.innerHTML = '<div class="mouse"></div><span>role para explorar</span>';
+      sec.appendChild(hint);
+    }
+    frag.appendChild(sec);
+  });
+  stage.appendChild(frag);
+
+  // ---- dot nav (built up-front) ----
+  var frames = document.querySelectorAll('.frame');
+  var dotnav = document.getElementById('dotnav');
+  var slides = document.querySelectorAll('.slide');
+  slides.forEach(function(sl, i){
+    var b = document.createElement('button');
+    b.setAttribute('aria-label', 'Ir para página ' + (i+1));
+    b.addEventListener('click', function(){ sl.scrollIntoView({behavior:'smooth'}); });
+    dotnav.appendChild(b);
+  });
+  var dots = dotnav.querySelectorAll('button');
+
+  // ---- scroll-driven reveal + active dot + progress + parallax (no IntersectionObserver) ----
+  var progress = document.getElementById('progress');
+  var brandbar = document.getElementById('brandbar');
+  var ticking = false;
+  function onScroll(){
+    var st = window.scrollY || document.documentElement.scrollTop;
+    var vh = window.innerHeight;
+    var h = document.documentElement.scrollHeight - vh;
+    progress.style.width = (h > 0 ? (st / h * 100) : 0) + '%';
+    if (st > vh * .6) brandbar.classList.add('show'); else brandbar.classList.remove('show');
+
+    // reveal frames as they enter, + subtle parallax
+    frames.forEach(function(f){
+      var r = f.getBoundingClientRect();
+      if (r.top < vh * 0.9 && r.bottom > 0) f.classList.add('in');
+      if (r.bottom > 0 && r.top < vh){
+        var p = (r.top + r.height/2 - vh/2) / vh; // -0.5..0.5
+        f.querySelector('img').style.transform = 'translateY(' + (p * -14) + 'px)';
+      }
+    });
+
+    // active dot = slide whose center is nearest viewport center
+    var best = 0, bestDist = Infinity;
+    slides.forEach(function(sl, i){
+      var r = sl.getBoundingClientRect();
+      var d = Math.abs((r.top + r.height/2) - vh/2);
+      if (d < bestDist){ bestDist = d; best = i; }
+    });
+    dots.forEach(function(d, i){ d.classList.toggle('active', i === best); });
+
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  onScroll();
+  // safety: ensure first view is revealed even before any scroll/paint settles
+  setTimeout(onScroll, 60);
+  setTimeout(onScroll, 400);
+
+  // ---- preloader hide ----
+  window.addEventListener('load', function(){
+    setTimeout(function(){ document.getElementById('loader').classList.add('hide'); }, 350);
+  });
+  setTimeout(function(){ document.getElementById('loader').classList.add('hide'); }, 2500);
+</script>
+</body>
+</html>
