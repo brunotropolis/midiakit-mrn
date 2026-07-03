@@ -1,0 +1,9 @@
+{
+  "_comment": "Números do mídia kit. Edite aqui e o site atualiza. Depois dá pra ligar um cron no n8n pra preencher automático (IG via Meta API, YouTube via Data API).",
+  "atualizado_em": "2026-01",
+  "instagram": { "seguidores": 609, "seguidores_suf": "mil", "views": 8, "views_suf": "milhões", "alcance": 5, "alcance_suf": "milhões" },
+  "youtube":   { "inscritos": 788, "inscritos_suf": "mil", "views": 106, "views_suf": "milhões", "recorrentes": 585, "recorrentes_suf": "mil" },
+  "tiktok":    { "seguidores": 655, "seguidores_suf": "mil", "views": 4, "views_suf": "milhões", "curtidas": 11, "curtidas_suf": "milhões" },
+  "publico":   { "mulheres": 87, "homens": 13, "faixa": "~50% entre 25 e 34 anos", "cidades": "São Paulo, Curitiba, Rio de Janeiro, Fortaleza e Belo Horizonte" },
+  "alunas": "+21.000", "paises": "20", "faturamento_ofertas": "850.000", "alunas_comunidade": "13.900"
+}
