@@ -125,6 +125,29 @@
   .media-plain{position:relative;justify-self:center}
   .media-plain img{display:block;width:100%;filter:drop-shadow(0 24px 40px rgba(0,0,0,.45))}
 
+  /* feature phone (single, tilted transparent WebP) */
+  .fphone{position:relative;justify-self:center;width:clamp(230px,30vw,360px);animation:phfloat 7s ease-in-out infinite;transition:transform .55s cubic-bezier(.16,.8,.3,1)}
+  .fphone img{display:block;width:100%;filter:drop-shadow(0 34px 44px rgba(0,0,0,.55))}
+  .fphone.tl{transform:rotate(-12deg)}
+  .fphone.tr{transform:rotate(11deg)}
+  .fphone.tl:hover,.fphone.tr:hover{transform:rotate(0)}
+  .fphone::before{content:"";position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:118%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(224,90,156,.4),transparent 62%);filter:blur(22px);z-index:-1}
+
+  /* duo phones (ofertas) */
+  .duo{position:relative;justify-self:center;width:clamp(280px,36vw,440px);aspect-ratio:1.15}
+  .duo .p{position:absolute;width:63%;transition:transform .55s cubic-bezier(.16,.8,.3,1)}
+  .duo .p img{display:block;width:100%;filter:drop-shadow(0 26px 36px rgba(0,0,0,.55))}
+  .duo .p1{left:0;bottom:0;transform:rotate(-13deg);z-index:1;animation:phfloat 7s ease-in-out infinite}
+  .duo .p2{right:0;top:0;transform:rotate(9deg);z-index:2;animation:phfloat 8s ease-in-out .6s infinite}
+  .duo:hover .p1{transform:rotate(-6deg)}.duo:hover .p2{transform:rotate(4deg)}
+  .duo::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:94%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(224,90,156,.34),transparent 64%);filter:blur(24px);z-index:0}
+
+  /* logos strip (full width) */
+  .logos-strip{display:flex;flex-wrap:wrap;gap:clamp(12px,1.8vw,22px);justify-content:center;margin-top:clamp(36px,5vw,60px)}
+  .logos-strip .lg{width:clamp(72px,8vw,104px);aspect-ratio:1;border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.35);transition:transform .3s}
+  .logos-strip .lg:hover{transform:translateY(-6px) scale(1.06)}
+  .logos-strip .lg img{width:100%;height:100%;object-fit:cover}
+
   /* logos grid */
   .logos{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.6vw,18px)}
   .logos .lg{aspect-ratio:1;border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.35);transition:transform .3s}
@@ -314,7 +337,7 @@
           <li class="rv d5">Credibilidade e autoridade no nicho materno</li>
         </ul>
       </div>
-      <div class="media-plain rv d2" data-par="-22"><img src="assets/phonegrid.jpg" alt="Conteúdos produzidos"></div>
+      <div class="fphone tl rv d2" data-par="-24"><img src="assets/phone-produzimos.webp" alt="Conteúdos produzidos"></div>
     </div>
   </section>
 
@@ -351,17 +374,20 @@
         <p class="body rv d1">Já criamos com diversas marcas conteúdos que informam de verdade, emocionam e fazem sentido para quem está vivendo o puerpério, a gestação ou os primeiros meses com o bebê.</p>
         <p class="body rv d2">Nosso objetivo é simples e poderoso: criar conversas que nascem da realidade das mães, geram identificação com quem nos acompanha e alcançam novas famílias com leveza e verdade.</p>
       </div>
-      <div class="logos rv d1" data-par="-14">
-        <div class="lg"><img src="assets/logo-nuk.jpg" alt="NUK"></div>
-        <div class="lg"><img src="assets/logo-huggies.jpg" alt="Huggies"></div>
-        <div class="lg"><img src="assets/logo-dipano.jpg" alt="Dipano"></div>
-        <div class="lg"><img src="assets/logo-jequiti.jpg" alt="Jequiti"></div>
-        <div class="lg"><img src="assets/logo-bisyou.jpg" alt="Bisyou"></div>
-        <div class="lg"><img src="assets/logo-rihappy.jpg" alt="Ropek"></div>
-        <div class="lg"><img src="assets/logo-wap.jpg" alt="Wap"></div>
-        <div class="lg"><img src="assets/logo-beepi.jpg" alt="Beep!"></div>
-        <div class="lg"><img src="assets/logo-casulo.jpg" alt="Casulo do Anjo"></div>
-        <div class="lg"><img src="assets/logo-keizzy.jpg" alt="Keizzy"></div>
+      <div class="fphone tr rv d1" data-par="-16"><img src="assets/phone-paraquem.webp" alt="Conteúdo de marca no Manual do Recém-Nascido"></div>
+    </div>
+    <div class="wrap">
+      <div class="logos-strip">
+        <div class="lg rv"><img src="assets/logo-nuk.jpg" alt="NUK"></div>
+        <div class="lg rv"><img src="assets/logo-huggies.jpg" alt="Huggies"></div>
+        <div class="lg rv d1"><img src="assets/logo-dipano.jpg" alt="Dipano"></div>
+        <div class="lg rv d1"><img src="assets/logo-jequiti.jpg" alt="Jequiti"></div>
+        <div class="lg rv d2"><img src="assets/logo-bisyou.jpg" alt="Bisyou"></div>
+        <div class="lg rv d2"><img src="assets/logo-rihappy.jpg" alt="Ropek"></div>
+        <div class="lg rv d3"><img src="assets/logo-wap.jpg" alt="Wap"></div>
+        <div class="lg rv d3"><img src="assets/logo-beepi.jpg" alt="Beep!"></div>
+        <div class="lg rv d4"><img src="assets/logo-casulo.jpg" alt="Casulo do Anjo"></div>
+        <div class="lg rv d4"><img src="assets/logo-keizzy.jpg" alt="Keizzy"></div>
       </div>
     </div>
   </section>
@@ -374,10 +400,10 @@
         <p class="body rv d1" style="margin:14px auto 0">Exemplos de como apresentamos os produtos de forma criativa, envolvente e com foco em conexão real com o público.</p>
       </div>
       <div class="phonerow">
-        <a class="phone rv d1" href="https://www.instagram.com/reel/Cu6pixDvvB_/" target="_blank" rel="noopener"><img src="assets/reel7-1.jpg" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d2" href="https://www.instagram.com/reel/C34_olPL123/" target="_blank" rel="noopener"><img src="assets/reel7-2.jpg" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d3" href="https://www.instagram.com/reel/CsYfaZNsxR7/" target="_blank" rel="noopener"><img src="assets/reel7-3.jpg" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d4" href="https://www.instagram.com/reel/Cv9s0whtBj0/" target="_blank" rel="noopener"><img src="assets/reel7-4.jpg" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <a class="phone rv d1" href="https://www.instagram.com/reel/Cu6pixDvvB_/" target="_blank" rel="noopener"><img src="assets/reel7-1.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <a class="phone rv d2" href="https://www.instagram.com/reel/C34_olPL123/" target="_blank" rel="noopener"><img src="assets/reel7-2.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <a class="phone rv d3" href="https://www.instagram.com/reel/CsYfaZNsxR7/" target="_blank" rel="noopener"><img src="assets/reel7-3.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <a class="phone rv d4" href="https://www.instagram.com/reel/Cv9s0whtBj0/" target="_blank" rel="noopener"><img src="assets/reel7-4.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
       </div>
       <div style="text-align:center"><span class="reeltag">▶ passe o mouse e clique para abrir no Instagram</span></div>
     </div>
@@ -387,10 +413,10 @@
   <section class="sec tint-b" data-nav>
     <div class="wrap">
       <div class="phonerow">
-        <a class="phone rv d1" href="https://www.instagram.com/reel/Cu4InyhuNYD/" target="_blank" rel="noopener"><img src="assets/reel8-1.jpg" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d2" href="https://www.instagram.com/reel/ClTPHERuAGu/" target="_blank" rel="noopener"><img src="assets/reel8-2.jpg" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d3" href="https://www.instagram.com/reel/CvhWoFNv2Lg/" target="_blank" rel="noopener"><img src="assets/reel8-3.jpg" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d4" href="https://www.instagram.com/reel/C3Fhx-VrrM6/" target="_blank" rel="noopener"><img src="assets/reel8-4.jpg" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <a class="phone rv d1" href="https://www.instagram.com/reel/Cu4InyhuNYD/" target="_blank" rel="noopener"><img src="assets/reel8-1.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <a class="phone rv d2" href="https://www.instagram.com/reel/ClTPHERuAGu/" target="_blank" rel="noopener"><img src="assets/reel8-2.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <a class="phone rv d3" href="https://www.instagram.com/reel/CvhWoFNv2Lg/" target="_blank" rel="noopener"><img src="assets/reel8-3.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <a class="phone rv d4" href="https://www.instagram.com/reel/C3Fhx-VrrM6/" target="_blank" rel="noopener"><img src="assets/reel8-4.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
       </div>
       <div style="text-align:center"><span class="reeltag">▶ mais exemplos — clique para assistir</span></div>
     </div>
@@ -451,14 +477,17 @@
           <li class="rv d4">Aulas práticas com mães e bebês reais</li>
         </ul>
       </div>
-      <div class="media-plain rv d2" data-par="-18"><img src="assets/wa-cursos.jpg" alt="Alunas do Manual do Recém-Nascido"></div>
+      <div class="fphone tr rv d2" data-par="-20"><img src="assets/phone-cursos.webp" alt="Conversa de aluna do Manual do Recém-Nascido"></div>
     </div>
   </section>
 
   <!-- 11 AS OFERTAS -->
   <section class="sec tint-b" data-nav>
     <div class="wrap two">
-      <div class="media-plain rv d1" data-par="-18"><img src="assets/phones-ofertas.jpg" alt="Ofertas Maternas"></div>
+      <div class="duo rv d1" data-par="-16">
+        <div class="p p1"><img src="assets/phone-ofertas-1.webp" alt="Oferta no WhatsApp"></div>
+        <div class="p p2"><img src="assets/phone-ofertas-2.webp" alt="Oferta em reel"></div>
+      </div>
       <div>
         <span class="kick rv">Ofertas Maternas</span>
         <h2 class="h2 display rv">AS <em>OFERTAS</em></h2>
