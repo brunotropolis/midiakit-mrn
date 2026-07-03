@@ -703,7 +703,7 @@
   function inView(el,m){var r=el.getBoundingClientRect();return r.top<(innerHeight*(m||.86))&&r.bottom>0;}
   function easeOut(t){return 1-Math.pow(1-t,3);}
   function animateCount(el){
-    var target=+el.getAttribute('data-count')||0, suf=el.getAttribute('data-suf'), hasSuf=el.hasAttribute('data-suf'),
+    var target=+(el.getAttribute('data-count')||el.getAttribute('data-plain'))||0, suf=el.getAttribute('data-suf'), hasSuf=el.hasAttribute('data-suf'),
         plain=el.hasAttribute('data-plain'), dur=1500, t0=null;
     function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);var v=Math.round(easeOut(p)*target);
       if(hasSuf){el.innerHTML='+'+v.toLocaleString('pt-BR')+'<span class="suf">'+(suf||'')+'</span>';}
