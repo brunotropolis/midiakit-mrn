@@ -83,6 +83,11 @@
   .listemoji li{display:flex;gap:9px;align-items:flex-start;padding:13px 16px;background:rgba(255,255,255,.05);border-radius:14px;border:1px solid rgba(255,255,255,.08);font-weight:500;color:#eaddf0;font-size:14px;line-height:1.35}
   .listemoji li b{flex:0 0 auto;margin-right:0}
   @media(max-width:600px){.listemoji{grid-template-columns:1fr}}
+  /* secao "produzir juntos" — layout fluido (menos vertical) */
+  .pj-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:end;margin-bottom:clamp(34px,5vw,58px)}
+  .pj-body{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(28px,5vw,60px);align-items:center}
+  .pj-body .listemoji{margin-top:0}
+  @media(max-width:860px){.pj-head{grid-template-columns:1fr;gap:14px}.pj-body{grid-template-columns:1fr;text-align:center}.pj-body .listemoji{text-align:left}.pj-body .dayfree{margin-bottom:6px}}
 
   /* chips / stat */
   .chips{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
@@ -130,6 +135,15 @@
   .tint-c{background:linear-gradient(160deg,#2a0b3f,#160622)}
   .tint-d{background:linear-gradient(150deg,#3a0f57,#1c0830)}
 
+  /* O Manual, composite integrado na faixa */
+  .manual-frame{position:relative;justify-self:center;width:100%;max-width:480px;border-radius:26px;transform:rotate(-2.5deg);transition:transform .5s cubic-bezier(.16,.8,.3,1)}
+  .manual-frame:hover{transform:rotate(0)}
+  .manual-frame img{display:block;width:100%;border-radius:26px;box-shadow:0 34px 64px rgba(0,0,0,.55)}
+  .manual-frame::after{content:"";position:absolute;inset:0;border-radius:26px;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(224,90,156,.35), inset 0 -70px 60px -34px rgba(22,6,34,.9), inset 0 70px 60px -40px rgba(22,6,34,.6)}
+  .manual-frame::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:112%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(198,42,128,.4),transparent 64%);filter:blur(30px);z-index:-1}
+  .manual-frame .badge{position:absolute;left:-14px;bottom:26px;z-index:3;background:linear-gradient(135deg,var(--magenta2),var(--pink));color:#fff;font-weight:700;font-size:13px;letter-spacing:.02em;padding:11px 18px;border-radius:14px;box-shadow:0 14px 30px rgba(224,90,156,.4)}
+
   /* collage / phone images framed */
   .media-card{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.07);transform:rotate(-3deg)}
   .media-card img{display:block;width:100%}
@@ -143,6 +157,8 @@
   .fphone.tr{transform:rotate(11deg)}
   .fphone.tl:hover,.fphone.tr:hover{transform:rotate(0)}
   .fphone::before{content:"";position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:118%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(224,90,156,.4),transparent 62%);filter:blur(22px);z-index:-1}
+  a.fphone{text-decoration:none;display:block}
+  .fphone-wrap{justify-self:center;display:flex;flex-direction:column;align-items:center;gap:20px}
 
   /* duo phones (ofertas) */
   .duo{position:relative;justify-self:center;width:clamp(280px,36vw,440px);aspect-ratio:1.15}
@@ -334,7 +350,7 @@
         <p class="body rv d2">Uma produtora especializada na criação de conteúdos reais para uma maternidade real.</p>
         <p class="body rv d3">Atuamos com vídeos, campanhas e narrativas que ajudam as marcas a se posicionarem de forma autêntica no universo materno, com bebês de verdade, contextos reais e soluções que fazem sentido para quem vive a maternidade na pele.</p>
       </div>
-      <div class="media-card rv d1" data-par="-20"><img src="assets/collage.jpg" alt="Conteúdos do Manual do Recém-Nascido"></div>
+      <div class="manual-frame rv d1" data-par="-20"><img src="assets/manual-composite.webp" alt="Presença do Manual do Recém-Nascido nas redes"><span class="badge">conteúdo real</span></div>
     </div>
   </section>
 
@@ -359,16 +375,18 @@
 
   <!-- 5 O QUE PODEMOS PRODUZIR JUNTOS -->
   <section class="sec tint-d" data-nav>
-    <div class="wrap two">
-      <div class="dayfree rv" data-par="-16">
-        <span class="halo"></span><span class="rings"></span>
-        <i class="cf dot a"></i><span class="cf hollow b"></span>
-        <svg class="cf star c" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.8 5.6 10.8 12 12-6.4 1.2-11.4 6.2-12 12-.6-5.8-5.6-10.8-12-12C6.4 10.8 11.4 5.8 12 0z"/></svg>
-        <img src="assets/day-cut-produzir.png" alt="Dayane Dos Anjos">
-      </div>
-      <div>
+    <div class="wrap">
+      <div class="pj-head">
         <h2 class="h2 display rv">O QUE PODEMOS <em>PRODUZIR JUNTOS</em></h2>
-        <p class="body rv d1">Acreditamos em conteúdos que criam conexão real com mães, de vídeos com bebês no colo a conversas transformadoras em grupos e palestras. Sua marca pode estar em vários pontos da nossa jornada com elas:</p>
+        <p class="body rv d1" style="margin-bottom:0">Acreditamos em conteúdos que criam conexão real com mães, de vídeos com bebês no colo a conversas transformadoras em grupos e palestras. Sua marca pode estar em vários pontos da nossa jornada com elas:</p>
+      </div>
+      <div class="pj-body">
+        <div class="dayfree rv" data-par="-14">
+          <span class="halo"></span><span class="rings"></span>
+          <i class="cf dot a"></i><span class="cf hollow b"></span>
+          <svg class="cf star c" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.8 5.6 10.8 12 12-6.4 1.2-11.4 6.2-12 12-.6-5.8-5.6-10.8-12-12C6.4 10.8 11.4 5.8 12 0z"/></svg>
+          <img src="assets/day-cut-produzir.webp" alt="Dayane Dos Anjos">
+        </div>
         <ul class="listemoji">
           <li class="rv d1"><b>🎥</b> Reels e stories com bebês reais no dia a dia</li>
           <li class="rv d2"><b>💡</b> Conteúdos integrados a automações e fluxos de conversa</li>
@@ -390,7 +408,10 @@
         <p class="body rv d1">Já criamos com diversas marcas conteúdos que informam de verdade, emocionam e fazem sentido para quem está vivendo o puerpério, a gestação ou os primeiros meses com o bebê.</p>
         <p class="body rv d2">Nosso objetivo é simples e poderoso: criar conversas que nascem da realidade das mães, geram identificação com quem nos acompanha e alcançam novas famílias com leveza e verdade.</p>
       </div>
-      <div class="fphone tr rv d1" data-par="-16"><img src="assets/phone-paraquem.webp" alt="Conteúdo de marca no Manual do Recém-Nascido"></div>
+      <div class="fphone-wrap rv d1" data-par="-16">
+        <a class="fphone tr" href="https://www.instagram.com/reel/CiiOy2pNbGq/" target="_blank" rel="noopener"><img src="assets/phone-paraquem.webp" alt="Reel do Manual do Recém-Nascido"></a>
+        <a class="reelbtn" href="https://www.instagram.com/reel/CiiOy2pNbGq/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a>
+      </div>
     </div>
     <div class="wrap">
       <div class="logos-strip">
