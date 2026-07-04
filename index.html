@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mídia Kit 2026 · Manual do Recém-Nascido</title>
-<meta name="description" content="Mídia kit do Manual do Recém-Nascido — Dayane Dos Anjos. Conteúdo real para uma maternidade real.">
+<meta name="description" content="Mídia kit do Manual do Recém-Nascido, Dayane Dos Anjos. Conteúdo real para uma maternidade real.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1a0729">
 <meta property="og:title" content="Mídia Kit 2026 · Manual do Recém-Nascido">
@@ -63,15 +63,26 @@
   .portrait .b{width:22px;height:22px;background:transparent;border:3px solid var(--cream);border-radius:50%;bottom:15%;left:-3%}
   .portrait .c{color:var(--cream);top:20%;left:-4%;width:26px;height:26px}
 
+  /* Day livre (sem moldura) — pose gesticulando */
+  .dayfree{position:relative;justify-self:center;width:clamp(280px,38vw,460px);display:flex;align-items:flex-end;justify-content:center}
+  .dayfree .halo{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:118%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(224,90,156,.5),rgba(224,90,156,0) 62%);filter:blur(10px);z-index:0}
+  .dayfree .rings{position:absolute;left:50%;top:40%;transform:translateX(-50%);width:92%;aspect-ratio:1;border:2px dotted rgba(255,255,255,.22);border-radius:50%;z-index:0;animation:spin 60s linear infinite}
+  .dayfree img{position:relative;z-index:2;width:100%;height:auto;filter:drop-shadow(0 26px 40px rgba(0,0,0,.5))}
+  .dayfree .cf{z-index:3}
+  .dayfree .a{width:16px;height:16px;background:var(--pink);border-radius:50%;top:6%;right:8%}
+  .dayfree .b{width:22px;height:22px;background:transparent;border:3px solid var(--cream);border-radius:50%;bottom:20%;left:0}
+  .dayfree .c{color:var(--cream);top:16%;left:2%;width:26px;height:26px}
+
   /* checklist */
   .checklist{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:12px}
   .checklist li{position:relative;padding:13px 18px 13px 52px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;font-weight:500;color:#eaddf0}
   .checklist li::before{content:"";position:absolute;left:16px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--magenta2));
     -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/70% no-repeat;
     mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/70% no-repeat}
-  .listemoji{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:11px}
-  .listemoji li{padding:13px 18px;background:rgba(255,255,255,.05);border-radius:999px;border:1px solid rgba(255,255,255,.08);font-weight:500;color:#eaddf0}
-  .listemoji li b{margin-right:6px}
+  .listemoji{list-style:none;margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .listemoji li{display:flex;gap:9px;align-items:flex-start;padding:13px 16px;background:rgba(255,255,255,.05);border-radius:14px;border:1px solid rgba(255,255,255,.08);font-weight:500;color:#eaddf0;font-size:14px;line-height:1.35}
+  .listemoji li b{flex:0 0 auto;margin-right:0}
+  @media(max-width:600px){.listemoji{grid-template-columns:1fr}}
 
   /* chips / stat */
   .chips{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
@@ -143,10 +154,11 @@
   .duo::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:94%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(224,90,156,.34),transparent 64%);filter:blur(24px);z-index:0}
 
   /* logos strip (full width) */
-  .logos-strip{display:flex;flex-wrap:wrap;gap:clamp(12px,1.8vw,22px);justify-content:center;margin-top:clamp(36px,5vw,60px)}
-  .logos-strip .lg{width:clamp(72px,8vw,104px);aspect-ratio:1;border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.35);transition:transform .3s}
+  .logos-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,2vw,26px);max-width:820px;margin:clamp(40px,5vw,64px) auto 0;place-items:center}
+  .logos-strip .lg{width:100%;max-width:112px;aspect-ratio:1;border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.35);transition:transform .3s}
   .logos-strip .lg:hover{transform:translateY(-6px) scale(1.06)}
   .logos-strip .lg img{width:100%;height:100%;object-fit:cover}
+  @media(max-width:600px){.logos-strip{grid-template-columns:repeat(3,1fr);gap:16px}}
 
   /* logos grid */
   .logos{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.6vw,18px)}
@@ -155,17 +167,21 @@
   .logos .lg img{width:100%;height:100%;object-fit:cover}
   @media(max-width:520px){.logos{grid-template-columns:repeat(3,1fr)}}
 
-  /* reels — individual phones */
-  .phonerow{display:flex;gap:clamp(12px,2.2vw,30px);justify-content:center;flex-wrap:wrap;margin-top:10px}
-  .phone{position:relative;flex:0 0 clamp(150px,20vw,232px);text-decoration:none;transition:transform .35s cubic-bezier(.16,.8,.3,1);animation:phfloat 7s ease-in-out infinite}
-  .phone:nth-child(2){animation-delay:.9s}.phone:nth-child(3){animation-delay:1.8s}.phone:nth-child(4){animation-delay:2.7s}
+  /* reels, individual phones */
+  .phonerow{display:flex;gap:clamp(14px,2.4vw,34px);justify-content:center;flex-wrap:wrap;margin-top:10px;align-items:flex-start}
+  .reelcard{flex:0 0 clamp(150px,20vw,232px);display:flex;flex-direction:column;align-items:center;gap:16px;animation:phfloat 7s ease-in-out infinite}
+  .reelcard:nth-child(2){animation-delay:.9s}.reelcard:nth-child(3){animation-delay:1.8s}.reelcard:nth-child(4){animation-delay:2.7s}
   @keyframes phfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .phone{position:relative;width:100%;text-decoration:none;display:block;transition:transform .35s cubic-bezier(.16,.8,.3,1)}
   .phone img{display:block;width:100%;border-radius:14px;filter:drop-shadow(0 20px 32px rgba(0,0,0,.5))}
-  .phone:hover{transform:translateY(-12px) rotate(-1.5deg) scale(1.03);z-index:2}
+  .phone:hover{transform:translateY(-8px) rotate(-1.5deg) scale(1.02);z-index:2}
   .phone .play{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%) scale(.5);width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;opacity:0;transition:.28s;box-shadow:0 10px 26px rgba(0,0,0,.5)}
   .phone:hover .play{opacity:1;transform:translate(-50%,-50%) scale(1)}
   .phone .play svg{width:22px;height:22px;fill:var(--magenta);margin-left:3px}
-  .reeltag{display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:var(--muted);font-size:13px}
+  .reelbtn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-weight:600;font-size:13px;color:#fff;background:linear-gradient(135deg,var(--magenta2),var(--pink));padding:9px 17px;border-radius:999px;box-shadow:0 8px 20px rgba(224,90,156,.35);transition:transform .2s,box-shadow .2s;white-space:nowrap}
+  .reelbtn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(224,90,156,.5)}
+  .reelbtn svg{width:13px;height:13px;fill:currentColor}
+  .reeltag{display:inline-flex;align-items:center;gap:8px;margin-top:26px;color:var(--muted);font-size:13px}
 
   /* ALCANCE */
   .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px)}
@@ -298,12 +314,12 @@
       </div>
       <div>
         <h2 class="h2 display rv">QUEM É A <em>DAY?</em></h2>
-        <p class="lead rv d1">Dayane Dos Anjos é fundadora do Manual do Recém-Nascido — especialista em amamentação, sono e cuidados com o bebê.</p>
-        <p class="body rv d2">Mãe e educadora digital, ela transformou sua experiência sobre maternidade em um projeto que já impactou milhares de alunas e uma comunidade de mais de 1 milhão de mães nas redes.</p>
-        <p class="body rv d3">Seu propósito é claro: tornar o início da maternidade mais leve — para a mãe se sentir segura e preparada — traduzindo essa vivência em conteúdos com relevância, aplicação e alto engajamento.</p>
+        <p class="lead rv d1">Dayane Dos Anjos é fundadora do Manual do Recém-Nascido, especialista em amamentação, sono e cuidados com o bebê.</p>
+        <p class="body rv d2">Mãe e educadora digital, ela transformou sua experiência sobre maternidade em um projeto que já impactou mais de 21 mil alunas e uma comunidade de mais de 2 milhões de seguidoras.</p>
+        <p class="body rv d3">Seu propósito é claro: tornar o início da maternidade mais leve, para a mãe se sentir segura e preparada, traduzindo essa vivência em conteúdos com relevância, aplicação e alto engajamento.</p>
         <div class="chips">
-          <div class="chip rv d3"><b>+13.900</b><span>alunas impactadas</span></div>
-          <div class="chip rv d4"><b>+1 milhão</b><span>de mães na comunidade</span></div>
+          <div class="chip rv d3"><b>+21.000</b><span>alunas em mais de 20 países</span></div>
+          <div class="chip rv d4"><b>+2 milhões</b><span>de seguidoras</span></div>
         </div>
       </div>
     </div>
@@ -314,9 +330,9 @@
     <div class="wrap two">
       <div>
         <h2 class="h2 display rv">O <em>MANUAL</em></h2>
-        <p class="lead rv d1">Mais do que um perfil nas redes — um projeto que impacta a vida de gestantes, mães de recém-nascidos e bebês.</p>
+        <p class="lead rv d1">Mais do que um perfil nas redes, um projeto que impacta a vida de gestantes, mães de recém-nascidos e bebês.</p>
         <p class="body rv d2">Uma produtora especializada na criação de conteúdos reais para uma maternidade real.</p>
-        <p class="body rv d3">Atuamos com vídeos, campanhas e narrativas que ajudam as marcas a se posicionarem de forma autêntica no universo materno — com bebês de verdade, contextos reais e soluções que fazem sentido para quem vive a maternidade na pele.</p>
+        <p class="body rv d3">Atuamos com vídeos, campanhas e narrativas que ajudam as marcas a se posicionarem de forma autêntica no universo materno, com bebês de verdade, contextos reais e soluções que fazem sentido para quem vive a maternidade na pele.</p>
       </div>
       <div class="media-card rv d1" data-par="-20"><img src="assets/collage.jpg" alt="Conteúdos do Manual do Recém-Nascido"></div>
     </div>
@@ -328,7 +344,7 @@
       <div>
         <span class="kick rv">Produção completa</span>
         <h2 class="h2 display rv">O QUE <em>PRODUZIMOS</em></h2>
-        <p class="body rv d1">Criamos conteúdos completos, do casting à entrega final. A marca só entra com o briefing e os produtos — nós cuidamos do resto.</p>
+        <p class="body rv d1">Criamos conteúdos completos, do casting à entrega final. A marca só entra com o briefing e os produtos, nós cuidamos do resto.</p>
         <ul class="checklist">
           <li class="rv d1">Casting com bebês reais</li>
           <li class="rv d2">Roteirização especializada</li>
@@ -344,15 +360,15 @@
   <!-- 5 O QUE PODEMOS PRODUZIR JUNTOS -->
   <section class="sec tint-d" data-nav>
     <div class="wrap two">
-      <div class="portrait rv" data-par="-16">
-        <span class="rings"></span><span class="arch p"></span>
+      <div class="dayfree rv" data-par="-16">
+        <span class="halo"></span><span class="rings"></span>
         <i class="cf dot a"></i><span class="cf hollow b"></span>
         <svg class="cf star c" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.8 5.6 10.8 12 12-6.4 1.2-11.4 6.2-12 12-.6-5.8-5.6-10.8-12-12C6.4 10.8 11.4 5.8 12 0z"/></svg>
         <img src="assets/day-cut-produzir.png" alt="Dayane Dos Anjos">
       </div>
       <div>
         <h2 class="h2 display rv">O QUE PODEMOS <em>PRODUZIR JUNTOS</em></h2>
-        <p class="body rv d1">Acreditamos em conteúdos que criam conexão real com mães — de vídeos com bebês no colo a conversas transformadoras em grupos e palestras. Sua marca pode estar em vários pontos da nossa jornada com elas:</p>
+        <p class="body rv d1">Acreditamos em conteúdos que criam conexão real com mães, de vídeos com bebês no colo a conversas transformadoras em grupos e palestras. Sua marca pode estar em vários pontos da nossa jornada com elas:</p>
         <ul class="listemoji">
           <li class="rv d1"><b>🎥</b> Reels e stories com bebês reais no dia a dia</li>
           <li class="rv d2"><b>💡</b> Conteúdos integrados a automações e fluxos de conversa</li>
@@ -400,12 +416,12 @@
         <p class="body rv d1" style="margin:14px auto 0">Exemplos de como apresentamos os produtos de forma criativa, envolvente e com foco em conexão real com o público.</p>
       </div>
       <div class="phonerow">
-        <a class="phone rv d1" href="https://www.instagram.com/reel/Cu6pixDvvB_/" target="_blank" rel="noopener"><img src="assets/reel7-1.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d2" href="https://www.instagram.com/reel/C34_olPL123/" target="_blank" rel="noopener"><img src="assets/reel7-2.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d3" href="https://www.instagram.com/reel/CsYfaZNsxR7/" target="_blank" rel="noopener"><img src="assets/reel7-3.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d4" href="https://www.instagram.com/reel/Cv9s0whtBj0/" target="_blank" rel="noopener"><img src="assets/reel7-4.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <div class="reelcard rv d1"><a class="phone" href="https://www.instagram.com/reel/Cu6pixDvvB_/" target="_blank" rel="noopener"><img src="assets/reel7-1.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a><a class="reelbtn" href="https://www.instagram.com/reel/Cu6pixDvvB_/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a></div>
+        <div class="reelcard rv d2"><a class="phone" href="https://www.instagram.com/reel/C34_olPL123/" target="_blank" rel="noopener"><img src="assets/reel7-2.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a><a class="reelbtn" href="https://www.instagram.com/reel/C34_olPL123/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a></div>
+        <div class="reelcard rv d3"><a class="phone" href="https://www.instagram.com/reel/CsYfaZNsxR7/" target="_blank" rel="noopener"><img src="assets/reel7-3.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a><a class="reelbtn" href="https://www.instagram.com/reel/CsYfaZNsxR7/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a></div>
+        <div class="reelcard rv d4"><a class="phone" href="https://www.instagram.com/reel/Cv9s0whtBj0/" target="_blank" rel="noopener"><img src="assets/reel7-4.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a><a class="reelbtn" href="https://www.instagram.com/reel/Cv9s0whtBj0/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a></div>
       </div>
-      <div style="text-align:center"><span class="reeltag">▶ passe o mouse e clique para abrir no Instagram</span></div>
+      <div style="text-align:center"><span class="reeltag">clique no celular ou no botão para assistir no Instagram</span></div>
     </div>
   </section>
 
@@ -413,12 +429,12 @@
   <section class="sec tint-b" data-nav>
     <div class="wrap">
       <div class="phonerow">
-        <a class="phone rv d1" href="https://www.instagram.com/reel/Cu4InyhuNYD/" target="_blank" rel="noopener"><img src="assets/reel8-1.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d2" href="https://www.instagram.com/reel/ClTPHERuAGu/" target="_blank" rel="noopener"><img src="assets/reel8-2.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d3" href="https://www.instagram.com/reel/CvhWoFNv2Lg/" target="_blank" rel="noopener"><img src="assets/reel8-3.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="phone rv d4" href="https://www.instagram.com/reel/C3Fhx-VrrM6/" target="_blank" rel="noopener"><img src="assets/reel8-4.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <div class="reelcard rv d1"><a class="phone" href="https://www.instagram.com/reel/Cu4InyhuNYD/" target="_blank" rel="noopener"><img src="assets/reel8-1.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a><a class="reelbtn" href="https://www.instagram.com/reel/Cu4InyhuNYD/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a></div>
+        <div class="reelcard rv d2"><a class="phone" href="https://www.instagram.com/reel/ClTPHERuAGu/" target="_blank" rel="noopener"><img src="assets/reel8-2.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a><a class="reelbtn" href="https://www.instagram.com/reel/ClTPHERuAGu/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a></div>
+        <div class="reelcard rv d3"><a class="phone" href="https://www.instagram.com/reel/CvhWoFNv2Lg/" target="_blank" rel="noopener"><img src="assets/reel8-3.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a><a class="reelbtn" href="https://www.instagram.com/reel/CvhWoFNv2Lg/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a></div>
+        <div class="reelcard rv d4"><a class="phone" href="https://www.instagram.com/reel/C3Fhx-VrrM6/" target="_blank" rel="noopener"><img src="assets/reel8-4.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a><a class="reelbtn" href="https://www.instagram.com/reel/C3Fhx-VrrM6/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a></div>
       </div>
-      <div style="text-align:center"><span class="reeltag">▶ mais exemplos — clique para assistir</span></div>
+      <div style="text-align:center"><span class="reeltag">clique no celular ou no botão para assistir no Instagram</span></div>
     </div>
   </section>
 
@@ -469,7 +485,7 @@
         <span class="kick rv">Formação</span>
         <h2 class="h2 display rv">CURSOS</h2>
         <div class="chips" style="margin:18px 0 6px"><div class="chip rv d1"><b>+21.000</b><span>alunas em mais de 20 países</span></div></div>
-        <p class="body rv d1">O Manual do Recém-Nascido é referência em conteúdos sobre maternidade, com soluções práticas e acolhedoras para gestantes e mães de recém-nascidos — comandado por Dayane Dos Anjos.</p>
+        <p class="body rv d1">O Manual do Recém-Nascido é referência em conteúdos sobre maternidade, com soluções práticas e acolhedoras para gestantes e mães de recém-nascidos, comandado por Dayane Dos Anjos.</p>
         <ul class="checklist">
           <li class="rv d1">Cursos sobre cuidados com o bebê, sono e amamentação</li>
           <li class="rv d2">Consultorias personalizadas com abordagem empática</li>
@@ -514,9 +530,9 @@
       </div>
       <div>
         <h2 class="h2 display rv">INVESTIMENTO</h2>
-        <p class="lead rv d1">Mais do que aparecer — sua marca vai fazer parte.</p>
+        <p class="lead rv d1">Mais do que aparecer, sua marca vai fazer parte.</p>
         <p class="body rv d2">Nossos pacotes permitem construir uma presença recorrente dentro da nossa comunidade: falando com mães de forma contínua, natural e estratégica.</p>
-        <p class="body rv d3">Ao longo do tempo, seu conteúdo não só gera identificação aqui, como também ativa a sua própria base — através das collabs, dos formatos certos e da frequência que cria conexão real.</p>
+        <p class="body rv d3">Ao longo do tempo, seu conteúdo não só gera identificação aqui, como também ativa a sua própria base, através das collabs, dos formatos certos e da frequência que cria conexão real.</p>
       </div>
     </div>
   </section>
@@ -528,8 +544,8 @@
         <span class="kick rv">Dois caminhos</span>
         <h2 class="h2 display rv" style="margin-bottom:20px">COMO <em>TRABALHAR</em> COM A GENTE</h2>
         <div class="labelrow">
-          <div class="lb rv d1"><h3>Ação de Impacto</h3><p>Rápida, direta e pensada para gerar alcance em curto prazo, com entregas pontuais — focada em branding.</p></div>
-          <div class="lb rv d2"><h3>Parceria de Presença</h3><p>Uma construção contínua de relacionamento com a audiência, fortalecendo a marca ao longo do tempo — focada em conversão.</p></div>
+          <div class="lb rv d1"><h3>Ação de Impacto</h3><p>Rápida, direta e pensada para gerar alcance em curto prazo, com entregas pontuais, focada em branding.</p></div>
+          <div class="lb rv d2"><h3>Parceria de Presença</h3><p>Uma construção contínua de relacionamento com a audiência, fortalecendo a marca ao longo do tempo, focada em conversão.</p></div>
         </div>
       </div>
       <div class="portrait rv d1" data-par="-14">
@@ -540,7 +556,7 @@
     </div>
   </section>
 
-  <!-- 14 AÇÃO DE IMPACTO — PACOTES -->
+  <!-- 14 AÇÃO DE IMPACTO, PACOTES -->
   <section class="sec tint-c" data-nav>
     <div class="wrap">
       <span class="kick rv">Ação de Impacto</span>
@@ -579,14 +595,14 @@
     </div>
   </section>
 
-  <!-- 15 PARCERIA — SUA PRESENÇA -->
+  <!-- 15 PARCERIA, SUA PRESENÇA -->
   <section class="sec tint-d" data-nav>
     <div class="wrap two">
       <div>
         <span class="kick rv">Parceria de Presença · 3 meses</span>
         <h2 class="h2 display rv">SUA <em>PRESENÇA</em></h2>
         <p class="lead rv d1">Mais do que conteúdo. Uma presença estratégica dentro do universo materno.</p>
-        <p class="body rv d2">Sua marca vai em contato direto com mães engajadas, por diversos canais, com frequência e conexão real — com acesso às nossas ações internas e base qualificada.</p>
+        <p class="body rv d2">Sua marca vai em contato direto com mães engajadas, por diversos canais, com frequência e conexão real, com acesso às nossas ações internas e base qualificada.</p>
       </div>
       <div>
         <ul class="checklist">
@@ -601,7 +617,7 @@
     </div>
   </section>
 
-  <!-- 16 PARCERIA — NOSSA PARCERIA -->
+  <!-- 16 PARCERIA, NOSSA PARCERIA -->
   <section class="sec tint-b" data-nav>
     <div class="wrap two">
       <div>
@@ -615,12 +631,12 @@
         <span class="kick rv">Parceria de Presença · 3 meses</span>
         <h2 class="h2 display rv">NOSSA <em>PARCERIA</em></h2>
         <p class="body rv d1">Sua marca entra nas nossas ações internas, falando diretamente com mães que consomem, confiam e se relacionam com a Day todos os dias.</p>
-        <p class="body rv d2">É dentro dessa base fiel que as decisões de compra são influenciadas — com recomendações orgânicas, naturais e altamente efetivas, que potencializam conversões de forma autêntica e recorrente.</p>
+        <p class="body rv d2">É dentro dessa base fiel que as decisões de compra são influenciadas, com recomendações orgânicas, naturais e altamente efetivas, que potencializam conversões de forma autêntica e recorrente.</p>
       </div>
     </div>
   </section>
 
-  <!-- 17 PARCERIA — INVESTIMENTO -->
+  <!-- 17 PARCERIA, INVESTIMENTO -->
   <section class="sec tint-d" data-nav>
     <div class="wrap two">
       <div>
