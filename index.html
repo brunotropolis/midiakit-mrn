@@ -67,7 +67,8 @@
   .dayfree{position:relative;justify-self:center;width:clamp(280px,38vw,460px);display:flex;align-items:flex-end;justify-content:center}
   .dayfree .halo{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:118%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(224,90,156,.5),rgba(224,90,156,0) 62%);filter:blur(10px);z-index:0}
   .dayfree .rings{position:absolute;left:50%;top:40%;transform:translateX(-50%);width:92%;aspect-ratio:1;border:2px dotted rgba(255,255,255,.22);border-radius:50%;z-index:0;animation:spin 60s linear infinite}
-  .dayfree img{position:relative;z-index:2;width:100%;height:auto;filter:drop-shadow(0 26px 40px rgba(0,0,0,.5))}
+  .dayfree img{position:relative;z-index:2;width:100%;height:auto;filter:drop-shadow(0 26px 40px rgba(0,0,0,.5));
+    -webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 98%);mask-image:linear-gradient(to bottom,#000 80%,transparent 98%)}
   .dayfree .cf{z-index:3}
   .dayfree .a{width:16px;height:16px;background:var(--pink);border-radius:50%;top:6%;right:8%}
   .dayfree .b{width:22px;height:22px;background:transparent;border:3px solid var(--cream);border-radius:50%;bottom:20%;left:0}
@@ -79,15 +80,9 @@
   .checklist li::before{content:"";position:absolute;left:16px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--magenta2));
     -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/70% no-repeat;
     mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/70% no-repeat}
-  .listemoji{list-style:none;margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .listemoji li{display:flex;gap:9px;align-items:flex-start;padding:13px 16px;background:rgba(255,255,255,.05);border-radius:14px;border:1px solid rgba(255,255,255,.08);font-weight:500;color:#eaddf0;font-size:14px;line-height:1.35}
-  .listemoji li b{flex:0 0 auto;margin-right:0}
-  @media(max-width:600px){.listemoji{grid-template-columns:1fr}}
-  /* secao "produzir juntos" — layout fluido (menos vertical) */
-  .pj-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:end;margin-bottom:clamp(34px,5vw,58px)}
-  .pj-body{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(28px,5vw,60px);align-items:center}
-  .pj-body .listemoji{margin-top:0}
-  @media(max-width:860px){.pj-head{grid-template-columns:1fr;gap:14px}.pj-body{grid-template-columns:1fr;text-align:center}.pj-body .listemoji{text-align:left}.pj-body .dayfree{margin-bottom:6px}}
+  .listemoji{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:11px}
+  .listemoji li{display:flex;gap:10px;align-items:center;padding:14px 20px;background:rgba(255,255,255,.05);border-radius:14px;border:1px solid rgba(255,255,255,.08);font-weight:500;color:#eaddf0;line-height:1.35}
+  .listemoji li b{flex:0 0 auto}
 
   /* chips / stat */
   .chips{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
@@ -375,18 +370,16 @@
 
   <!-- 5 O QUE PODEMOS PRODUZIR JUNTOS -->
   <section class="sec tint-d" data-nav>
-    <div class="wrap">
-      <div class="pj-head">
-        <h2 class="h2 display rv">O QUE PODEMOS <em>PRODUZIR JUNTOS</em></h2>
-        <p class="body rv d1" style="margin-bottom:0">Acreditamos em conteúdos que criam conexão real com mães, de vídeos com bebês no colo a conversas transformadoras em grupos e palestras. Sua marca pode estar em vários pontos da nossa jornada com elas:</p>
+    <div class="wrap two">
+      <div class="dayfree rv" data-par="-14">
+        <span class="halo"></span><span class="rings"></span>
+        <i class="cf dot a"></i><span class="cf hollow b"></span>
+        <svg class="cf star c" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.8 5.6 10.8 12 12-6.4 1.2-11.4 6.2-12 12-.6-5.8-5.6-10.8-12-12C6.4 10.8 11.4 5.8 12 0z"/></svg>
+        <img src="assets/day-cut-produzir.webp" alt="Dayane Dos Anjos">
       </div>
-      <div class="pj-body">
-        <div class="dayfree rv" data-par="-14">
-          <span class="halo"></span><span class="rings"></span>
-          <i class="cf dot a"></i><span class="cf hollow b"></span>
-          <svg class="cf star c" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.8 5.6 10.8 12 12-6.4 1.2-11.4 6.2-12 12-.6-5.8-5.6-10.8-12-12C6.4 10.8 11.4 5.8 12 0z"/></svg>
-          <img src="assets/day-cut-produzir.webp" alt="Dayane Dos Anjos">
-        </div>
+      <div>
+        <h2 class="h2 display rv">O QUE PODEMOS <em>PRODUZIR JUNTOS</em></h2>
+        <p class="body rv d1">Acreditamos em conteúdos que criam conexão real com mães, de vídeos com bebês no colo a conversas transformadoras em grupos e palestras. Sua marca pode estar em vários pontos da nossa jornada com elas:</p>
         <ul class="listemoji">
           <li class="rv d1"><b>🎥</b> Reels e stories com bebês reais no dia a dia</li>
           <li class="rv d2"><b>💡</b> Conteúdos integrados a automações e fluxos de conversa</li>
