@@ -36,6 +36,8 @@
   .sec{padding:clamp(64px,10vw,130px) 0}
   .kick{display:inline-block;font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:clamp(11px,1.3vw,14px);color:var(--pink);margin-bottom:20px;padding:7px 15px;border:1px solid rgba(224,90,156,.45);border-radius:999px}
   .h2{font-size:clamp(38px,6.4vw,84px);color:#fff;line-height:.96}
+  .nowrap-title{white-space:nowrap;font-size:clamp(32px,5.3vw,72px)}
+  @media(max-width:600px){.nowrap-title{white-space:normal}}
   .h2 em{font-style:normal;color:var(--pink)}
   .lead{font-weight:600;font-size:clamp(17px,2vw,22px);color:#fff;margin:16px 0 12px}
   .body{color:#d8c2e0;margin-bottom:14px;max-width:58ch}
@@ -65,8 +67,8 @@
 
   /* Day livre (sem moldura), pose gesticulando */
   .dayfree{position:relative;justify-self:center;width:clamp(280px,38vw,460px);display:flex;align-items:flex-end;justify-content:center}
-  .dayfree .halo{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:118%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(224,90,156,.5),rgba(224,90,156,0) 62%);filter:blur(10px);z-index:0}
-  .dayfree .rings{position:absolute;left:50%;top:40%;transform:translateX(-50%);width:92%;aspect-ratio:1;border:2px dotted rgba(255,255,255,.22);border-radius:50%;z-index:0;animation:spin 60s linear infinite}
+  .dayfree .halo{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:104%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(224,90,156,.5),rgba(224,90,156,0) 62%);filter:blur(10px);z-index:0}
+  .dayfree .rings{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:88%;aspect-ratio:1;border:2px dotted rgba(255,255,255,.22);border-radius:50%;z-index:0;animation:spin 60s linear infinite}
   .dayfree img{position:relative;z-index:2;width:100%;height:auto;filter:drop-shadow(0 26px 40px rgba(0,0,0,.5));
     -webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 98%);mask-image:linear-gradient(to bottom,#000 80%,transparent 98%)}
   .dayfree .cf{z-index:3}
@@ -378,7 +380,7 @@
         <img src="assets/day-cut-produzir.webp" alt="Dayane Dos Anjos">
       </div>
       <div>
-        <h2 class="h2 display rv">O QUE PODEMOS <em>PRODUZIR JUNTOS</em></h2>
+        <h2 class="h2 display rv nowrap-title">O QUE PODEMOS<br><em>PRODUZIR JUNTOS</em></h2>
         <p class="body rv d1">Acreditamos em conteúdos que criam conexão real com mães, de vídeos com bebês no colo a conversas transformadoras em grupos e palestras. Sua marca pode estar em vários pontos da nossa jornada com elas:</p>
         <ul class="listemoji">
           <li class="rv d1"><b>🎥</b> Reels e stories com bebês reais no dia a dia</li>
