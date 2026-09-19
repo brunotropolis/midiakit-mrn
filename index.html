@@ -196,6 +196,21 @@
   .reelbtn svg{width:13px;height:13px;fill:currentColor}
   .reeltag{display:inline-flex;align-items:center;gap:8px;margin-top:26px;color:var(--muted);font-size:13px}
 
+  /* chip com número em destaque (branco alto contraste) */
+  .chip-hl{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3)}
+  .chip-hl b{color:#fff;text-shadow:0 2px 16px rgba(255,255,255,.3)}
+  .chip-hl span{color:#e8d4f0}
+
+  /* botão reel verde pulsando (seção Para Quem) */
+  .reelbtn-green{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15px;color:#07341a;background:linear-gradient(135deg,#16a34a,#22c55e);padding:13px 24px;border-radius:999px;box-shadow:0 8px 24px rgba(34,197,94,.45);transition:transform .2s,box-shadow .2s;white-space:nowrap;animation:pulse-green 2.4s ease-in-out infinite}
+  .reelbtn-green:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(34,197,94,.65);animation:none}
+  .reelbtn-green svg{width:16px;height:16px;fill:currentColor}
+  @keyframes pulse-green{0%,100%{box-shadow:0 8px 24px rgba(34,197,94,.45)}50%{box-shadow:0 8px 36px rgba(34,197,94,.7),0 0 0 7px rgba(34,197,94,.13)}}
+
+  /* ícones listemoji — SVG minimalistas */
+  .listemoji .ico{flex:0 0 36px;width:36px;height:36px;display:grid;place-items:center;background:rgba(224,90,156,.13);border:1px solid rgba(224,90,156,.26);border-radius:10px}
+  .listemoji .ico svg{width:17px;height:17px;stroke:var(--pink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
   /* ALCANCE */
   .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px)}
   .card{background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:clamp(22px,2.6vw,34px);transition:transform .3s,border-color .3s,box-shadow .3s}
@@ -331,23 +346,10 @@
         <p class="body rv d2">Mãe e educadora digital, ela transformou sua experiência sobre maternidade em um projeto que já impactou mais de 21 mil alunas e uma comunidade de mais de 2 milhões de seguidoras.</p>
         <p class="body rv d3">Seu propósito é claro: tornar o início da maternidade mais leve, para a mãe se sentir segura e preparada, traduzindo essa vivência em conteúdos com relevância, aplicação e alto engajamento.</p>
         <div class="chips">
-          <div class="chip rv d3"><b>+21.000</b><span>alunas em mais de 20 países</span></div>
-          <div class="chip rv d4"><b>+2 milhões</b><span>de seguidoras</span></div>
+          <div class="chip chip-hl rv d3"><b>+21.000</b><span>alunas em mais de 20 países</span></div>
+          <div class="chip chip-hl rv d4"><b>+2 milhões</b><span>de seguidoras</span></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 3 O MANUAL -->
-  <section class="sec tint-b" data-nav>
-    <div class="wrap two">
-      <div>
-        <h2 class="h2 display rv">O <em>MANUAL</em></h2>
-        <p class="lead rv d1">Mais do que um perfil nas redes, um projeto que impacta a vida de gestantes, mães de recém-nascidos e bebês.</p>
-        <p class="body rv d2">Uma produtora especializada na criação de conteúdos reais para uma maternidade real.</p>
-        <p class="body rv d3">Atuamos com vídeos, campanhas e narrativas que ajudam as marcas a se posicionarem de forma autêntica no universo materno, com bebês de verdade, contextos reais e soluções que fazem sentido para quem vive a maternidade na pele.</p>
-      </div>
-      <div class="manual-frame rv d1" data-par="-20"><img src="assets/manual-composite.webp" alt="Presença do Manual do Recém-Nascido nas redes"><span class="badge">conteúdo real</span></div>
     </div>
   </section>
 
@@ -357,11 +359,10 @@
       <div>
         <span class="kick rv">Produção completa</span>
         <h2 class="h2 display rv">O QUE <em>PRODUZIMOS</em></h2>
-        <p class="body rv d1">Criamos conteúdos completos, do casting à entrega final. A marca só entra com o briefing e os produtos, nós cuidamos do resto.</p>
+        <p class="body rv d1" style="margin-top:28px">Criamos conteúdos completos, do casting à entrega final. A marca só entra com o briefing e os produtos, nós cuidamos do resto.</p>
         <ul class="checklist">
           <li class="rv d1">Casting com bebês reais</li>
           <li class="rv d2">Roteirização especializada</li>
-          <li class="rv d3">Edição profissional</li>
           <li class="rv d4">Postagens com collab e alcance orgânico</li>
           <li class="rv d5">Credibilidade e autoridade no nicho materno</li>
         </ul>
@@ -381,15 +382,14 @@
       </div>
       <div>
         <h2 class="h2 display rv nowrap-title">O QUE PODEMOS<br><em>PRODUZIR JUNTOS</em></h2>
-        <p class="body rv d1">Acreditamos em conteúdos que criam conexão real com mães, de vídeos com bebês no colo a conversas transformadoras em grupos e palestras. Sua marca pode estar em vários pontos da nossa jornada com elas:</p>
+        <p class="body rv d1" style="margin-top:28px">Acreditamos em conteúdos que criam conexão real com mães. Sua marca pode estar em vários pontos da nossa jornada com elas:</p>
         <ul class="listemoji">
-          <li class="rv d1"><b>🎥</b> Reels e stories com bebês reais no dia a dia</li>
-          <li class="rv d2"><b>💡</b> Conteúdos integrados a automações e fluxos de conversa</li>
-          <li class="rv d2"><b>🔗</b> Links pensados para gerar cliques, engajamento e conversão</li>
-          <li class="rv d3"><b>👩‍🏫</b> Ativação direta na base de alunas e dentro dos cursos</li>
-          <li class="rv d3"><b>💬</b> Divulgação nos nossos grupos de ofertas e WhatsApp</li>
-          <li class="rv d4"><b>📥</b> Inclusão nas iscas digitais que mais captam mães</li>
-          <li class="rv d4"><b>🎤</b> Palestras digitais ou presenciais</li>
+          <li class="rv d1"><span class="ico"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span> Reels e stories com bebês reais em contexto natural</li>
+          <li class="rv d2"><span class="ico"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span> Links estratégicos que geram cliques e conversão</li>
+          <li class="rv d3"><span class="ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span> Ativação na base de alunas e dentro dos cursos</li>
+          <li class="rv d3"><span class="ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Presença ativa nos nossos grupos de WhatsApp</li>
+          <li class="rv d4"><span class="ico"><svg viewBox="0 0 24 24"><path d="M22 8c0-1.1-.9-2-2-2H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8z"/><path d="M22 8l-10 7L2 8"/></svg></span> Inclusão nas iscas digitais de maior captação</li>
+          <li class="rv d4"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span> Palestras digitais e presenciais com a Day</li>
         </ul>
       </div>
     </div>
@@ -400,12 +400,12 @@
     <div class="wrap two">
       <div>
         <h2 class="h2 display rv">PARA QUEM JÁ <em>PRODUZIMOS</em></h2>
-        <p class="body rv d1">Já criamos com diversas marcas conteúdos que informam de verdade, emocionam e fazem sentido para quem está vivendo o puerpério, a gestação ou os primeiros meses com o bebê.</p>
+        <p class="body rv d1" style="margin-top:28px">Já criamos com diversas marcas conteúdos que informam de verdade, emocionam e fazem sentido para quem está vivendo o puerpério, a gestação ou os primeiros meses com o bebê.</p>
         <p class="body rv d2">Nosso objetivo é simples e poderoso: criar conversas que nascem da realidade das mães, geram identificação com quem nos acompanha e alcançam novas famílias com leveza e verdade.</p>
       </div>
-      <div class="fphone-wrap rv d1" data-par="-16">
+      <div class="fphone-wrap rv d1" data-par="-16" style="gap:12px">
         <a class="fphone tr" href="https://www.instagram.com/reel/CiiOy2pNbGq/" target="_blank" rel="noopener"><img src="assets/phone-paraquem.webp" alt="Reel do Manual do Recém-Nascido"></a>
-        <a class="reelbtn" href="https://www.instagram.com/reel/CiiOy2pNbGq/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a>
+        <a class="reelbtn-green" href="https://www.instagram.com/reel/CiiOy2pNbGq/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a>
       </div>
     </div>
     <div class="wrap">
