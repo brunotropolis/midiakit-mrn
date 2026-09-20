@@ -290,6 +290,34 @@
   .rail-hint{text-align:center;color:var(--muted);font-size:13px;margin-top:6px}
   .rail-hint b{color:var(--pink)}
 
+  /* pricing vertical grid */
+  .avulsos-bar{background:linear-gradient(165deg,#33113f,#1e0930);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:24px 28px;margin-bottom:22px}
+  .avulsos-bar h3{font-family:'Anton',sans-serif;font-size:clamp(14px,1.6vw,18px);color:var(--pink);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px}
+  .avulsos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .avulso-item{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 8px;border-right:1px solid rgba(255,255,255,.08)}
+  .avulso-item:last-child{border-right:none}
+  .avulso-item span{font-size:14px;font-weight:600;color:#e6d6ec}
+  .avulso-item small{font-size:11px;color:#a98ab8;margin:4px 0 8px}
+  .avulso-item b{font-family:'Anton',sans-serif;font-size:clamp(22px,2.8vw,30px);color:#fff}
+  .combos-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .combo-card{position:relative;background:linear-gradient(165deg,#33113f,#1e0930);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:26px;transition:transform .3s,box-shadow .3s}
+  .combo-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.45)}
+  .combo-card.hot{background:linear-gradient(165deg,var(--magenta),#5a1450);border-color:rgba(224,90,156,.5)}
+  .combo-card .tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);font-weight:700}
+  .combo-card.hot .tag{color:#ffd9ec}
+  .combo-card h3{font-family:'Anton',sans-serif;font-size:clamp(22px,2.8vw,32px);color:#fff;margin:4px 0 8px}
+  .combo-price{font-family:'Anton',sans-serif;font-size:clamp(30px,4vw,44px);color:var(--pink);line-height:1}
+  .combo-card.hot .combo-price{color:#fff}
+  .combo-price .c{font-size:.5em;vertical-align:.4em;margin-right:2px}
+  .combo-badge{position:absolute;top:-12px;right:18px;background:linear-gradient(135deg,var(--pink),var(--magenta2));color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:20px;box-shadow:0 4px 16px rgba(224,90,156,.4)}
+  .combo-includes{list-style:none;margin-top:14px;padding:0}
+  .combo-includes li{position:relative;padding:5px 0 5px 20px;font-size:13px;color:#d8c2e0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .combo-includes li:last-child{border-bottom:none}
+  .combo-includes li::before{content:'✓';position:absolute;left:0;color:var(--pink);font-weight:700;font-size:12px}
+  .combo-card.hot .combo-includes li{color:#f3e0ee}
+  .combo-card.hot .combo-includes li::before{color:#ffd9ec}
+  @media(max-width:700px){.avulsos-grid{grid-template-columns:repeat(2,1fr)}.avulso-item:nth-child(2){border-right:none}.combos-row{grid-template-columns:1fr}.combo-badge{top:-10px;right:14px}}
+
   /* CONTATO */
   .cta{background:#150621;min-height:92svh;display:flex;align-items:center}
   .cta .shard{position:absolute;inset:0;z-index:0}
@@ -625,36 +653,49 @@
   <section class="sec tint-c" data-nav>
     <div class="wrap">
       <span class="kick rv">Ação de Impacto</span>
-      <h2 class="h2 display rv" style="margin-bottom:6px">PACOTES <em>AVULSOS &amp; COMBOS</em></h2>
-      <p class="rail-hint rv d1" style="text-align:left;margin:8px 0 18px">Arraste para o lado <b>→</b> para ver todos os pacotes</p>
-      <div class="pricerail">
-        <div class="pcard rv d1">
-          <div class="tag">Valores avulsos</div>
-          <h3>Individuais</h3>
-          <ul class="rows">
-            <li><span>Post no Feed <small style="color:#a98ab8">· Instagram</small></span><b>R$ 800</b></li>
-            <li><span>Sequência Stories <small style="color:#a98ab8">· Instagram</small></span><b>R$ 1.500</b></li>
-            <li><span>Short Vídeo <small style="color:#a98ab8">· IG + TikTok</small></span><b>R$ 3.000</b></li>
-            <li><span>Vídeo <small style="color:#a98ab8">· YouTube</small></span><b>R$ 3.500</b></li>
-          </ul>
+      <h2 class="h2 display rv" style="margin-bottom:20px">PACOTES <em>AVULSOS &amp; COMBOS</em></h2>
+
+      <div class="avulsos-bar rv d1">
+        <h3>Valores avulsos</h3>
+        <div class="avulsos-grid">
+          <div class="avulso-item"><span>Post no Feed</span><small>Instagram</small><b>R$ 800</b></div>
+          <div class="avulso-item"><span>Seq. Stories</span><small>Instagram</small><b>R$ 1.500</b></div>
+          <div class="avulso-item"><span>Short Vídeo</span><small>IG + TikTok</small><b>R$ 3.000</b></div>
+          <div class="avulso-item"><span>Vídeo</span><small>YouTube</small><b>R$ 3.500</b></div>
         </div>
-        <div class="pcard rv d2">
+      </div>
+
+      <div class="combos-row">
+        <div class="combo-card rv d2">
           <div class="tag">Combo</div>
           <h3>Views</h3>
-          <div class="price"><span class="c">R$</span><span data-plain="4">0</span> mil</div>
-          <p class="desc">Um short vídeo para o Instagram com repostagem no TikTok + sequência de até 3 stories com redirecionamento para o canal do anunciante.</p>
+          <div class="combo-price"><span class="c">R$</span>4 mil</div>
+          <ul class="combo-includes">
+            <li>Short Vídeo IG + TikTok</li>
+            <li>Sequência de até 3 Stories</li>
+          </ul>
         </div>
-        <div class="pcard hot rv d3">
-          <div class="tag">Combo · mais escolhido</div>
+        <div class="combo-card hot rv d3">
+          <div class="combo-badge">mais escolhido</div>
+          <div class="tag">Combo</div>
           <h3>Content</h3>
-          <div class="price"><span class="c">R$</span>4,7 mil</div>
-          <p class="desc">Um post para a timeline do Instagram, um short vídeo com repostagem no TikTok e sequência de até 3 stories com redirecionamento para o canal do anunciante.</p>
+          <div class="combo-price"><span class="c">R$</span>4,7 mil</div>
+          <ul class="combo-includes">
+            <li>Post no Feed do Instagram</li>
+            <li>Short Vídeo IG + TikTok</li>
+            <li>Sequência de até 3 Stories</li>
+          </ul>
         </div>
-        <div class="pcard rv d4">
+        <div class="combo-card rv d4">
           <div class="tag">Combo</div>
           <h3>Master</h3>
-          <div class="price"><span class="c">R$</span>7,9 mil</div>
-          <p class="desc">Post na timeline + short vídeo com repostagem no TikTok + até 3 stories + um vídeo de até 5 min no YouTube, todos com redirecionamento para o canal do anunciante.</p>
+          <div class="combo-price"><span class="c">R$</span>7,9 mil</div>
+          <ul class="combo-includes">
+            <li>Post no Feed do Instagram</li>
+            <li>Short Vídeo IG + TikTok</li>
+            <li>Sequência de até 3 Stories</li>
+            <li>Vídeo YouTube até 5 min</li>
+          </ul>
         </div>
       </div>
     </div>
