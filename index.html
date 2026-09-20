@@ -527,7 +527,7 @@
           <div class="city-tags"><span class="city-tag">São Paulo</span><span class="city-tag">Rio de Janeiro</span><span class="city-tag">Fortaleza</span><span class="city-tag">Belo Horizonte</span><span class="city-tag">Curitiba</span><span class="city-tag">Salvador</span><span class="city-tag">Goiânia</span><span class="city-tag">Recife</span><span class="city-tag">Manaus</span><span class="city-tag">Porto Alegre</span></div>
         </div>
       </div>
-      <p style="text-align:center;color:#7d6489;font-size:12px;margin-top:16px" data-updated>Dados de set/2026</p>
+      <p style="text-align:center;color:#7d6489;font-size:11px;margin-top:16px;letter-spacing:.03em" data-updated>Dados dos últimos 90 dias · atualizado em set/2026</p>
     </div>
   </section>
 
@@ -743,9 +743,9 @@
   // data.json -> numbers (manual for now; ready for a cron later). Embedded fallback so nunca mostra 0.
   function get(o,path){return path.split('.').reduce(function(a,k){return a&&a[k];},o);}
   var FALLBACK={atualizado_em:"set/2026",
-    instagram:{seguidores:650,seguidores_suf:"mil",views:8,views_suf:"milhões",alcance:5,alcance_suf:"milhões"},
-    youtube:{inscritos:788,inscritos_suf:"mil",views:106,views_suf:"milhões",recorrentes:585,recorrentes_suf:"mil"},
-    tiktok:{seguidores:655,seguidores_suf:"mil",views:4,views_suf:"milhões",curtidas:11,curtidas_suf:"milhões"},
+    instagram:{seguidores:650,seguidores_suf:"mil",views:11.7,views_suf:"milhões",alcance:3.7,alcance_suf:"milhões"},
+    youtube:{inscritos:811,inscritos_suf:"mil",views:135,views_suf:"milhões",recorrentes:585,recorrentes_suf:"mil"},
+    tiktok:{seguidores:660,seguidores_suf:"mil",views:4,views_suf:"milhões",curtidas:11.8,curtidas_suf:"milhões"},
     publico:{mulheres:87,homens:13,faixa:"entre 25 e 34 anos",cidades:"São Paulo, Rio de Janeiro, Fortaleza, Belo Horizonte, Curitiba, Salvador, Goiânia, Recife, Manaus e Porto Alegre"}};
   function applyData(d){
     document.querySelectorAll('[data-k]').forEach(function(el){
