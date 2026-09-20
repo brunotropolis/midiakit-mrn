@@ -197,6 +197,10 @@
   .reeltag{display:inline-flex;align-items:center;gap:8px;margin-top:26px;color:var(--muted);font-size:13px}
 
   /* chip com número em destaque (branco alto contraste) */
+  .checklist-sm li{padding:10px 16px 10px 46px;font-size:14px}
+  .marketplace-logos{display:flex;align-items:center;gap:20px;margin-top:10px;flex-wrap:wrap}
+  .marketplace-logos svg{opacity:.75;transition:opacity .3s}
+  .marketplace-logos svg:hover{opacity:1}
   .chip-hl{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3)}
   .chip-hl b{color:#fff;text-shadow:0 2px 16px rgba(255,255,255,.3)}
   .chip-hl span{color:#e8d4f0}
@@ -528,7 +532,7 @@
           <div class="city-tags"><span class="city-tag">São Paulo</span><span class="city-tag">Rio de Janeiro</span><span class="city-tag">Fortaleza</span><span class="city-tag">Belo Horizonte</span><span class="city-tag">Curitiba</span><span class="city-tag">Salvador</span><span class="city-tag">Goiânia</span><span class="city-tag">Recife</span><span class="city-tag">Manaus</span><span class="city-tag">Porto Alegre</span></div>
         </div>
       </div>
-      <p style="text-align:center;color:#7d6489;font-size:11px;margin-top:16px;letter-spacing:.03em" data-updated>Dados dos últimos 90 dias · atualizado em set/2026</p>
+      <p style="text-align:center;color:#7d6489;font-size:11px;margin-top:16px;letter-spacing:.03em" data-updated>dados dos últimos 90 dias, atualizado em set/2026</p>
     </div>
   </section>
 
@@ -538,7 +542,7 @@
       <div>
         <span class="kick rv">Para as famílias</span>
         <h2 class="h2 display rv">CURSOS</h2>
-        <p class="body rv d1">O Manual do Recém-Nascido é referência em conteúdos sobre maternidade, com soluções práticas e acolhedoras para gestantes e mães de recém-nascidos, comandado por Dayane Dos Anjos.</p>
+        <p class="body rv d1" style="margin-top:24px">O Manual do Recém-Nascido é referência em conteúdos sobre maternidade, com soluções práticas e acolhedoras para gestantes e mães de recém-nascidos, comandado por Dayane Dos Anjos.</p>
         <ul class="checklist">
           <li class="rv d1"><b>Aulas práticas com mães e bebês reais</b></li>
           <li class="rv d2">Curso de Sono do Bebê</li>
@@ -561,16 +565,21 @@
         <div class="p p2"><img src="assets/phone-ofertas-2.webp" alt="Oferta em reel"></div>
       </div>
       <div>
-        <span class="kick rv">Ofertas Maternas</span>
+        <span class="kick rv">Afiliados & Marketplaces</span>
         <h2 class="h2 display rv">AS <em>OFERTAS</em></h2>
-        <p class="body rv d1">O projeto Ofertas Maternas conecta marcas a um público quente e pronto para comprar. Com linguagem próxima, curadoria criteriosa e presença diária em grupos, redes e conteúdos, entregamos o que as mães realmente buscam: praticidade, confiança e economia.</p>
-        <ul class="checklist">
-          <li class="rv d1">Produtos divulgados nas maiores plataformas</li>
-          <li class="rv d2">Curadoria real, focada no dia a dia materno</li>
-          <li class="rv d3">Grupos ativos de mães, com engajamento diário</li>
-          <li class="rv d4">Conteúdos que geram desejo, identificação e cliques</li>
+        <p class="body rv d1" style="margin-top:24px">O projeto Ofertas Maternas conecta marcas a um público quente e pronto para comprar. Com linguagem próxima, curadoria criteriosa e presença diária em grupos, redes e conteúdos, entregamos o que as mães realmente buscam: praticidade, confiança e economia.</p>
+        <ul class="checklist checklist-sm">
+          <li class="rv d1">Curadoria focada no dia a dia materno</li>
+          <li class="rv d2">Grupos ativos com engajamento diário</li>
+          <li class="rv d3">Conteúdos que geram desejo e cliques</li>
         </ul>
-        <div class="chips" style="margin-top:24px"><div class="chip rv d2"><b>+ R$ <span class="n" data-plain="850">0</span> mil</b><span>faturados nos últimos 12 meses</span></div></div>
+        <p class="body rv d2" style="margin-top:22px;font-size:13px;color:#cbb0d6">Curadoria e ofertas nas melhores plataformas:</p>
+        <div class="marketplace-logos rv d3">
+          <svg viewBox="0 0 90 28" height="22" xmlns="http://www.w3.org/2000/svg"><rect width="90" height="28" rx="6" fill="#EE4D2D"/><text x="45" y="20" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-weight="700" font-size="16">Shopee</text></svg>
+          <svg viewBox="0 0 110 28" height="22" xmlns="http://www.w3.org/2000/svg"><text x="0" y="21" fill="#fff" font-family="Arial,sans-serif" font-weight="700" font-size="22">amazon</text><path d="M4 25 Q55 32 106 25" stroke="#F90" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M95 22 L106 25 L100 28" fill="#F90"/></svg>
+          <svg viewBox="0 0 140 28" height="22" xmlns="http://www.w3.org/2000/svg"><text x="0" y="21" fill="#FFE600" font-family="Arial,sans-serif" font-weight="700" font-size="18">Mercado Livre</text></svg>
+        </div>
+        <div class="chips" style="margin-top:24px"><div class="chip rv d3"><b>+ R$ <span class="n" data-plain="1">0</span> MILHÃO</b><span>faturados nos últimos 12 meses</span></div></div>
       </div>
     </div>
   </section>
