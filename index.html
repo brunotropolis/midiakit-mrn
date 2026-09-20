@@ -239,6 +239,14 @@
   .bar{height:10px;border-radius:6px;background:rgba(14,4,24,.6);overflow:hidden;margin-top:14px;display:flex;box-shadow:inset 0 2px 4px rgba(0,0,0,.3)}
   .bar i{display:block;height:100%;width:0;transition:width 1.3s cubic-bezier(.16,.8,.3,1)}
   .bar .w{background:linear-gradient(90deg,var(--pink),var(--magenta2));border-radius:6px 0 0 6px;box-shadow:0 0 12px rgba(224,90,156,.4)}.bar .h{background:rgba(74,42,99,.6)}
+  .age-breakdown{margin-top:14px;display:flex;flex-direction:column;gap:7px}
+  .age-row{display:flex;align-items:center;gap:8px}
+  .age-lbl{flex:0 0 36px;font-size:10px;font-weight:700;color:#c8a5d6;letter-spacing:.04em}
+  .age-bar{flex:1;height:6px;border-radius:4px;background:rgba(14,4,24,.5);overflow:hidden;box-shadow:inset 0 1px 2px rgba(0,0,0,.25)}
+  .age-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--magenta2));border-radius:4px;box-shadow:0 0 8px rgba(224,90,156,.35);transition:width 1.3s cubic-bezier(.16,.8,.3,1)}
+  .age-pct{flex:0 0 30px;font-size:11px;font-weight:700;color:#f0ddf5;text-align:right}
+  .age-row:first-child .age-lbl{color:#f0a0cc}
+  .age-row:first-child .age-pct{color:#fff}
   .city-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
   .city-tag{font-size:11px;font-weight:600;color:#e8d4f0;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:7px 16px;white-space:nowrap;transition:all .25s;letter-spacing:.02em}
   .city-tag:hover{background:rgba(224,90,156,.1);border-color:rgba(224,90,156,.35);color:#fff;box-shadow:0 4px 16px rgba(224,90,156,.15)}
@@ -504,13 +512,19 @@
         </div>
         <div class="dbox">
           <div class="dbox-head"><div class="dbox-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span class="dbox-title">Idade</span></div>
-          <div class="dbox-big">~50<span class="accent">%</span></div>
-          <div class="dbox-label" data-t="publico.faixa">entre 25 e 34 anos</div>
-          <div class="dbox-sub">faixa etária predominante</div>
+          <div class="dbox-big">43<span class="accent">%</span></div>
+          <div class="dbox-label">entre 25 e 34 anos</div>
+          <div class="age-breakdown">
+            <div class="age-row"><span class="age-lbl">25-34</span><div class="age-bar"><i data-w="100"></i></div><span class="age-pct">43%</span></div>
+            <div class="age-row"><span class="age-lbl">35-44</span><div class="age-bar"><i data-w="81"></i></div><span class="age-pct">35%</span></div>
+            <div class="age-row"><span class="age-lbl">45-54</span><div class="age-bar"><i data-w="17"></i></div><span class="age-pct">8%</span></div>
+            <div class="age-row"><span class="age-lbl">55+</span><div class="age-bar"><i data-w="19"></i></div><span class="age-pct">8%</span></div>
+            <div class="age-row"><span class="age-lbl">18-24</span><div class="age-bar"><i data-w="14"></i></div><span class="age-pct">6%</span></div>
+          </div>
         </div>
         <div class="dbox">
           <div class="dbox-head"><div class="dbox-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span class="dbox-title">Top cidades</span></div>
-          <div class="city-tags"><span class="city-tag">São Paulo</span><span class="city-tag">Curitiba</span><span class="city-tag">Rio de Janeiro</span><span class="city-tag">Fortaleza</span><span class="city-tag">Belo Horizonte</span></div>
+          <div class="city-tags"><span class="city-tag">São Paulo</span><span class="city-tag">Rio de Janeiro</span><span class="city-tag">Fortaleza</span><span class="city-tag">Belo Horizonte</span><span class="city-tag">Curitiba</span><span class="city-tag">Salvador</span><span class="city-tag">Goiânia</span><span class="city-tag">Recife</span><span class="city-tag">Manaus</span><span class="city-tag">Porto Alegre</span></div>
         </div>
       </div>
       <p style="text-align:center;color:#7d6489;font-size:12px;margin-top:16px" data-updated>Dados de set/2026</p>
@@ -732,7 +746,7 @@
     instagram:{seguidores:650,seguidores_suf:"mil",views:8,views_suf:"milhões",alcance:5,alcance_suf:"milhões"},
     youtube:{inscritos:788,inscritos_suf:"mil",views:106,views_suf:"milhões",recorrentes:585,recorrentes_suf:"mil"},
     tiktok:{seguidores:655,seguidores_suf:"mil",views:4,views_suf:"milhões",curtidas:11,curtidas_suf:"milhões"},
-    publico:{mulheres:87,homens:13,faixa:"~50% entre 25 e 34 anos",cidades:"São Paulo, Curitiba, Rio de Janeiro, Fortaleza e Belo Horizonte"}};
+    publico:{mulheres:87,homens:13,faixa:"entre 25 e 34 anos",cidades:"São Paulo, Rio de Janeiro, Fortaleza, Belo Horizonte, Curitiba, Salvador, Goiânia, Recife, Manaus e Porto Alegre"}};
   function applyData(d){
     document.querySelectorAll('[data-k]').forEach(function(el){
       var base=el.getAttribute('data-k'); var v=get(d,base); if(v==null)return; var suf=get(d,base+'_suf')||'';
@@ -770,7 +784,7 @@
     var host=document.querySelector(sel); if(!host||countStarted[key])return;
     if(inView(host,.75)){countStarted[key]=true;
       host.querySelectorAll('[data-count],[data-plain],[data-pct]').forEach(animateCount);
-      host.querySelectorAll('.bar i').forEach(function(i){i.style.width=i.getAttribute('data-w')+'%';});
+      host.querySelectorAll('.bar i, .age-bar i').forEach(function(i){i.style.width=i.getAttribute('data-w')+'%';});
     }
   }
   function tick(){

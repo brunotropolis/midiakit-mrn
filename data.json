@@ -4,5 +4,5 @@
   "instagram": { "seguidores": 650, "seguidores_suf": "mil", "views": 8, "views_suf": "milhões", "alcance": 5, "alcance_suf": "milhões" },
   "youtube":   { "inscritos": 788, "inscritos_suf": "mil", "views": 106, "views_suf": "milhões", "recorrentes": 585, "recorrentes_suf": "mil" },
   "tiktok":    { "seguidores": 655, "seguidores_suf": "mil", "views": 4, "views_suf": "milhões", "curtidas": 11, "curtidas_suf": "milhões" },
-  "publico":   { "mulheres": 87, "homens": 13, "faixa": "entre 25 e 34 anos", "cidades": "São Paulo, Curitiba, Rio de Janeiro, Fortaleza e Belo Horizonte" }
+  "publico":   { "mulheres": 87, "homens": 13, "faixa": "entre 25 e 34 anos", "cidades": "São Paulo, Rio de Janeiro, Fortaleza, Belo Horizonte, Curitiba, Salvador, Goiânia, Recife, Manaus e Porto Alegre" }
 }
