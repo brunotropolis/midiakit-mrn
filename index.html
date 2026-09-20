@@ -294,30 +294,36 @@
   /* pricing vertical grid */
   .avulsos-bar{background:linear-gradient(165deg,#33113f,#1e0930);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:20px 24px;margin-bottom:18px}
   .avulsos-bar h3{font-family:'Anton',sans-serif;font-size:clamp(13px,1.4vw,16px);color:var(--pink);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
-  .avulsos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .avulso-item{display:flex;flex-direction:column;align-items:center;text-align:center;padding:10px 8px;border-right:1px solid rgba(255,255,255,.08)}
-  .avulso-item:last-child{border-right:none}
+  .avulsos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .avulso-item{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 12px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+  .avulso-item:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14)}
   .avulso-item span{font-size:14px;font-weight:600;color:#e6d6ec}
   .avulso-item small{font-size:11px;color:#a98ab8;margin:4px 0 8px}
   .avulso-item b{font-family:'Anton',sans-serif;font-size:clamp(22px,2.8vw,30px);color:#fff}
   .combos-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .combo-card{position:relative;background:linear-gradient(165deg,#33113f,#1e0930);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:22px;transition:transform .3s,box-shadow .3s}
   .combo-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.45)}
-  .combo-card.hot{background:linear-gradient(165deg,var(--magenta),#5a1450);border-color:rgba(224,90,156,.5)}
+  .combo-views{background:linear-gradient(165deg,#2a1848,#1a0d30);border-color:rgba(90,26,134,.4)}
+  .combo-views .combo-price{color:#b07adb}
+  .combo-views .combo-includes li::before{color:#b07adb}
+  .combo-content{background:linear-gradient(165deg,var(--magenta),#5a1450);border-color:rgba(224,90,156,.5)}
+  .combo-content .combo-price{color:#fff}
+  .combo-content .tag{color:#ffd9ec}
+  .combo-content .combo-includes li{color:#f3e0ee}
+  .combo-content .combo-includes li::before{color:#ffd9ec}
+  .combo-master{background:linear-gradient(165deg,#1a3045,#0f1e30);border-color:rgba(56,189,248,.3)}
+  .combo-master .combo-price{color:#7dd3fc}
+  .combo-master .combo-includes li::before{color:#7dd3fc}
   .combo-card .tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);font-weight:700}
-  .combo-card.hot .tag{color:#ffd9ec}
+  .combo-content .tag{color:#ffd9ec}
   .combo-card h3{font-family:'Anton',sans-serif;font-size:clamp(22px,2.8vw,32px);color:#fff;margin:4px 0 8px}
   .combo-price{font-family:'Anton',sans-serif;font-size:clamp(30px,4vw,44px);color:var(--pink);line-height:1}
-  .combo-card.hot .combo-price{color:#fff}
   .combo-price .c{font-size:.5em;vertical-align:.4em;margin-right:2px}
-  .combo-badge{position:absolute;top:-12px;right:18px;background:linear-gradient(135deg,var(--pink),var(--magenta2));color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:20px;box-shadow:0 4px 16px rgba(224,90,156,.4)}
   .combo-includes{list-style:none;margin-top:14px;padding:0}
   .combo-includes li{position:relative;padding:5px 0 5px 20px;font-size:13px;color:#d8c2e0;border-bottom:1px solid rgba(255,255,255,.06)}
   .combo-includes li:last-child{border-bottom:none}
   .combo-includes li::before{content:'✓';position:absolute;left:0;color:var(--pink);font-weight:700;font-size:12px}
-  .combo-card.hot .combo-includes li{color:#f3e0ee}
-  .combo-card.hot .combo-includes li::before{color:#ffd9ec}
-  @media(max-width:700px){.avulsos-grid{grid-template-columns:repeat(2,1fr)}.avulso-item:nth-child(2){border-right:none}.combos-row{grid-template-columns:1fr}.combo-badge{top:-10px;right:14px}}
+  @media(max-width:700px){.avulsos-grid{grid-template-columns:repeat(2,1fr)}.combos-row{grid-template-columns:1fr}}
 
   /* CONTATO */
   .cta{background:#150621;min-height:92svh;display:flex;align-items:center}
@@ -459,7 +465,7 @@
       </div>
       <div class="fphone-wrap rv d1" data-par="-16" style="gap:12px;position:relative">
         <a class="fphone tr" href="https://www.instagram.com/reel/CiiOy2pNbGq/" target="_blank" rel="noopener"><img src="assets/phone-paraquem.webp" alt="Reel do Manual do Recém-Nascido"></a>
-        <a class="reelbtn-green" href="https://www.instagram.com/reel/CiiOy2pNbGq/" target="_blank" rel="noopener" style="position:absolute;bottom:22%;left:-30px;z-index:5"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reels</a>
+        <a class="reelbtn-green" href="https://www.instagram.com/reel/CiiOy2pNbGq/" target="_blank" rel="noopener" style="position:absolute;bottom:5%;left:-24px;z-index:5"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reels</a>
       </div>
     </div>
     <div class="wrap">
@@ -562,7 +568,6 @@
           <div class="city-tags"><span class="city-tag">São Paulo</span><span class="city-tag">Rio de Janeiro</span><span class="city-tag">Fortaleza</span><span class="city-tag">Belo Horizonte</span><span class="city-tag">Curitiba</span><span class="city-tag">Salvador</span><span class="city-tag">Goiânia</span><span class="city-tag">Recife</span><span class="city-tag">Manaus</span><span class="city-tag">Porto Alegre</span></div>
         </div>
       </div>
-      <p style="text-align:center;color:#7d6489;font-size:11px;margin-top:16px;letter-spacing:.03em" data-updated>dados dos últimos 90 dias, atualizado em set/2026</p>
     </div>
   </section>
 
@@ -621,7 +626,7 @@
         <span class="rings"></span><span class="arch m"></span>
         <i class="cf dot a"></i><span class="cf hollow b"></span>
         <svg class="cf star c" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.8 5.6 10.8 12 12-6.4 1.2-11.4 6.2-12 12-.6-5.8-5.6-10.8-12-12C6.4 10.8 11.4 5.8 12 0z"/></svg>
-        <img src="assets/day-cut-invest.png" alt="Dayane Dos Anjos" style="width:118%;max-width:none;margin-left:-9%">
+        <img src="assets/day-cut-invest.png" alt="Dayane Dos Anjos">
       </div>
       <div>
         <h2 class="h2 display rv">INVESTIMENTO</h2>
@@ -668,7 +673,7 @@
       </div>
 
       <div class="combos-row">
-        <div class="combo-card rv d2">
+        <div class="combo-card combo-views rv d2">
           <div class="tag">Combo</div>
           <h3>Views</h3>
           <div class="combo-price"><span class="c">R$</span>4 mil</div>
@@ -677,8 +682,7 @@
             <li>Sequência de até 3 Stories</li>
           </ul>
         </div>
-        <div class="combo-card hot rv d3">
-          <div class="combo-badge">mais escolhido</div>
+        <div class="combo-card combo-content rv d3">
           <div class="tag">Combo</div>
           <h3>Content</h3>
           <div class="combo-price"><span class="c">R$</span>4,7 mil</div>
@@ -688,7 +692,7 @@
             <li>Sequência de até 3 Stories</li>
           </ul>
         </div>
-        <div class="combo-card rv d4">
+        <div class="combo-card combo-master rv d4">
           <div class="tag">Combo</div>
           <h3>Master</h3>
           <div class="combo-price"><span class="c">R$</span>7,9 mil</div>
@@ -810,7 +814,6 @@
     var mp=get(d,'publico.mulheres'); if(mp){document.querySelector('[data-pct=mulheres]').setAttribute('data-count',mp);
       document.querySelector('.bar .w').setAttribute('data-w',mp);document.querySelector('.bar .h').setAttribute('data-w',get(d,'publico.homens'));}
     document.querySelectorAll('[data-t]').forEach(function(el){var v=get(d,el.getAttribute('data-t'));if(v)el.textContent=v;});
-    var up=document.querySelector('[data-updated]'); if(up&&d.atualizado_em)up.textContent='Dados de '+d.atualizado_em.replace('-','/');
   }
   applyData(FALLBACK); // instant defaults
   fetch('data.json').then(function(r){return r.json();}).then(applyData).catch(function(){});
