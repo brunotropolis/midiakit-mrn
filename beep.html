@@ -340,13 +340,16 @@
   .cta .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr .8fr;gap:30px;align-items:center;width:100%}
   .cta h2{font-size:clamp(46px,9vw,120px);color:#fff}
   .cta h2 em{color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.28)}
-  .contacts{margin-top:30px;display:flex;flex-direction:column;gap:14px}
-  .contacts a{display:inline-flex;align-items:center;gap:14px;text-decoration:none;font-weight:600;font-size:clamp(15px,2vw,20px);color:#fff;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.16);padding:14px 20px;border-radius:14px;transition:transform .2s,background .2s;max-width:max-content}
+  .contacts{margin-top:26px;display:flex;flex-direction:column;gap:14px;max-width:460px}
+  .contacts a{display:flex;align-items:center;gap:14px;text-decoration:none;background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.16);padding:13px 18px;border-radius:16px;transition:transform .2s,background .2s}
   .contacts a:hover{transform:translateX(6px);background:rgba(0,0,0,.4)}
-  .contacts a svg{width:22px;height:22px;flex:0 0 auto;fill:var(--pink)}
-  .cta .photo{position:relative;justify-self:center;width:clamp(240px,32vw,380px);aspect-ratio:.8;display:flex;align-items:flex-end;justify-content:center}
-  .cta .photo img{position:relative;z-index:2;width:100%;-webkit-mask-image:linear-gradient(to bottom,#000 88%,transparent);mask-image:linear-gradient(to bottom,#000 88%,transparent);filter:drop-shadow(0 20px 30px rgba(0,0,0,.4))}
-  @media(max-width:860px){.cta .wrap{grid-template-columns:1fr;text-align:center}.cta .photo{order:-1;width:min(58vw,280px)}.contacts{align-items:center}.contacts a{max-width:none}}
+  .contacts a .ci{flex:0 0 auto;width:46px;height:46px;border-radius:50%;background:rgba(224,90,156,.16);border:1px solid rgba(224,90,156,.4);display:grid;place-items:center}
+  .contacts a .ci svg{width:22px;height:22px;fill:var(--pink)}
+  .contacts a .ct{display:flex;flex-direction:column;min-width:0;text-align:left}
+  .contacts a .ct b{font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:2px}
+  .contacts a .ct .v{color:#fff;font-weight:600;font-size:clamp(14px,1.7vw,18px);line-height:1.25;overflow-wrap:anywhere}
+  .cta-portrait{justify-self:center}
+  @media(max-width:860px){.cta .wrap{grid-template-columns:1fr;text-align:center}.cta-portrait{order:-1;width:min(58vw,230px)}.contacts{align-items:stretch;margin-left:auto;margin-right:auto}}
 
   /* chrome: progress, dots, fabs */
   .progress{position:fixed;top:0;left:0;height:4px;width:0;z-index:60;background:linear-gradient(90deg,var(--magenta2),var(--pink));box-shadow:0 0 12px rgba(224,90,156,.7)}
@@ -416,12 +419,18 @@
     .card h3{margin:0 0 22px 62px;min-height:46px;display:flex;align-items:center}
     .card .stat{margin:18px 0}
     .card .stat .n{font-size:42px}
-    .two .checklist li{font-size:13px;padding-top:5px;padding-bottom:5px}
+    .checklist{gap:10px}
+    .two .checklist li{font-size:13px;padding-top:12px;padding-bottom:12px;min-height:48px;display:flex;align-items:center}
+    .listemoji{gap:10px}
+    .listemoji li{padding-top:12px;padding-bottom:12px}
     .fphone{display:flex;flex-direction:column;align-items:center}
-    .fphone .phone-badge{position:static;transform:none;display:inline-block;margin:16px auto 0;white-space:normal}
+    .fphone .phone-badge{position:static;transform:none;display:inline-block;margin:18px auto 0;white-space:normal;padding:14px 24px}
+    .fphone .phone-badge b{font-size:32px;line-height:1}
+    .fphone .phone-badge span{display:block;margin-top:8px;font-size:14px;line-height:1.35}
     .marketplace-logos{justify-content:center}
     .two .cw-portrait{display:none}
     .mob-photo{display:flex!important}
+    .inv-portrait{width:150px!important;margin:2px auto 20px}
   }
   .mob-photo{display:none;width:150px;margin:6px auto 26px}
 
@@ -671,7 +680,7 @@
           <li class="rv d4">Equipe especializada para suporte contínuo</li>
         </ul>
       </div>
-      <div class="fphone tr rv d2" data-par="-20"><img src="assets/phone-cursos.webp" alt="Conversa de aluna do Manual do Recém-Nascido"><div class="chip chip-hl phone-badge"><b>+21.000</b><span>alunas em mais de 20 países</span></div></div>
+      <div class="fphone tr rv d2" data-par="-20"><img src="assets/phone-cursos.webp" alt="Conversa de aluna do Manual do Recém-Nascido"><div class="chip chip-hl phone-badge"><b>+21.000</b><span>alunas em mais<br>de 20 países</span></div></div>
     </div>
   </section>
 
@@ -705,7 +714,7 @@
   <!-- 12 INVESTIMENTO (intro) -->
   <section class="sec tint-d" data-nav style="overflow:visible">
     <div class="wrap two">
-      <div class="portrait rv" data-par="-16" style="overflow:visible">
+      <div class="portrait inv-portrait rv" data-par="-16" style="overflow:visible">
         <span class="rings"></span><span class="arch m"></span>
         <i class="cf dot a"></i><span class="cf hollow b"></span>
         <svg class="cf star c" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.8 5.6 10.8 12 12-6.4 1.2-11.4 6.2-12 12-.6-5.8-5.6-10.8-12-12C6.4 10.8 11.4 5.8 12 0z"/></svg>
@@ -884,19 +893,21 @@
     <div class="wrap">
       <div>
         <h2 class="h2 display rv">QUER CRIAR <em>COM A GENTE?</em></h2>
+        <p class="body rv d1" style="margin-top:18px;max-width:46ch">Podemos montar um projeto personalizado em cima da sua estratégia de comunicação, para um relacionamento maior com a nossa base.</p>
         <div class="contacts">
           <a class="rv d1" href="https://wa.me/5541984302127?text=Oi!%20Vim%20pelo%20m%C3%ADdia%20kit%20e%20quero%20criar%20com%20voc%C3%AAs." target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.516 5.26l-.999 3.648 3.981-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            (41) 98430-2127 · Bruno Sampaio
+            <span class="ci"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.516 5.26l-.999 3.648 3.981-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></span>
+            <span class="ct"><b>WhatsApp</b><span class="v">(41) 98430-2127 · Bruno Sampaio</span></span>
           </a>
           <a class="rv d2" href="mailto:assessoria@manualdorecemnascido.com.br">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
-            assessoria@<wbr>manualdorecemnascido.com.br
+            <span class="ci"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg></span>
+            <span class="ct"><b>E-mail</b><span class="v">assessoria@<wbr>manualdorecemnascido.com.br</span></span>
           </a>
         </div>
       </div>
-      <div class="photo">
-        <img class="rv" src="assets/day-cut-cta.png" alt="Dayane Dos Anjos">
+      <div class="portrait cta-portrait rv" data-par="-14">
+        <span class="rings"></span><span class="arch m"></span>
+        <img src="assets/day-cut-quem.png" alt="Dayane Dos Anjos">
       </div>
     </div>
   </section>
