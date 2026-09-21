@@ -303,17 +303,23 @@
   .combos-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .combo-card{position:relative;background:linear-gradient(165deg,#33113f,#1e0930);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:22px;transition:transform .3s,box-shadow .3s}
   .combo-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.45)}
-  .combo-views{background:linear-gradient(165deg,#2a1848,#1a0d30);border-color:rgba(90,26,134,.4)}
-  .combo-views .combo-price{color:#b07adb}
-  .combo-views .combo-includes li::before{color:#b07adb}
-  .combo-content{background:linear-gradient(165deg,var(--magenta),#5a1450);border-color:rgba(224,90,156,.5)}
+  /* Combo 1 = BRANCO (texto escuro) */
+  .combo-views{background:linear-gradient(165deg,#ffffff,#f2e9df);border-color:rgba(0,0,0,.12)}
+  .combo-card.combo-views h3{color:#2a0f38}
+  .combo-views .combo-price{color:#a01e69}
+  .combo-views .tag{color:#a01e69}
+  .combo-views .combo-includes li{color:#4a2d55;border-bottom-color:rgba(0,0,0,.08)}
+  .combo-views .combo-includes li::before{color:#a01e69}
+  /* Combo 2 = ROSA ESCURO */
+  .combo-content{background:linear-gradient(165deg,#8e1c63,#4a0f34);border-color:rgba(224,90,156,.45)}
   .combo-content .combo-price{color:#fff}
   .combo-content .tag{color:#ffd9ec}
   .combo-content .combo-includes li{color:#f3e0ee}
   .combo-content .combo-includes li::before{color:#ffd9ec}
-  .combo-master{background:linear-gradient(165deg,#1a3045,#0f1e30);border-color:rgba(56,189,248,.3)}
-  .combo-master .combo-price{color:#7dd3fc}
-  .combo-master .combo-includes li::before{color:#7dd3fc}
+  /* Combo 3 = ROXO ESCURO */
+  .combo-master{background:linear-gradient(165deg,#3d1152,#1a0730);border-color:rgba(157,78,221,.35)}
+  .combo-master .combo-price{color:#c9a3e6}
+  .combo-master .combo-includes li::before{color:#c9a3e6}
   .combo-card .tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);font-weight:700}
   .combo-content .tag{color:#ffd9ec}
   .combo-card h3{font-family:'Anton',sans-serif;font-size:clamp(22px,2.8vw,32px);color:#fff;margin:4px 0 8px}
@@ -676,7 +682,7 @@
         <h2 class="h2 display rv" style="margin-bottom:20px">COMO <em>TRABALHAR</em> COM A GENTE</h2>
         <div class="labelrow">
           <div class="lb rv d1"><h3>Ação de Impacto</h3><p>Rápida, direta e pensada para gerar alcance em curto prazo, com entregas pontuais, focada em branding.</p></div>
-          <div class="lb rv d2"><h3>Parceria de Presença</h3><p>Uma construção contínua de relacionamento com a audiência, fortalecendo a marca ao longo do tempo, focada em conversão.</p></div>
+          <div class="lb rv d2"><h3>Projeto Personalizado</h3><p>Uma construção contínua de relacionamento com a audiência, fortalecendo a marca ao longo do tempo, focada em conversão.</p></div>
         </div>
       </div>
       <div class="portrait rv d1" data-par="-14">
