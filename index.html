@@ -376,8 +376,8 @@
     .contacts a{max-width:100%;box-sizing:border-box;font-size:13.5px;overflow-wrap:break-word;gap:11px;padding:13px 16px;justify-content:flex-start;text-align:left}
     .contacts a svg{align-self:center}
     .cta h2{font-size:clamp(34px,10vw,44px);line-height:1.04;overflow-wrap:break-word;max-width:100%}
-    /* AS OFERTAS: os 2 celulares (absolutos + rotacionados) invadiam o titulo abaixo */
-    .two .duo{width:min(62vw,230px);margin:0 auto 104px}
+    /* AS OFERTAS: celulares vao pro FIM da faixa (como nas outras secoes) */
+    .two .duo{order:2;width:min(58vw,210px);margin:92px auto 78px}
     .sec .two .body{line-height:1.62}
     /* HERO: subtitulo passava por baixo dos botoes flutuantes */
     .hero .sub{max-width:24ch;padding:0 6px}
@@ -398,6 +398,41 @@
     /* centraliza o cabecalho da secao de Pacotes (unica que ficava a esquerda) */
     .sechead{text-align:center}
   }
+
+  /* ==== Ajustes mobile (lote 2) ==== */
+  @media(max-width:600px){
+    /* 1. hero: mais respiro entre subtitulo e "role para explorar" */
+    .hero .wrap{padding-bottom:104px}
+    /* 2 + 10. chips (quem: 21mil / 2mi · ofertas: R$1 milhao) maiores e centralizados */
+    .chips{justify-content:center}
+    .chip{padding:16px 26px;text-align:center}
+    .chip-hl b{font-size:36px!important}
+    .chip-hl span{font-size:14px}
+    /* 3. para quem: botao colado no celular + mais espaco pras logos */
+    .fphone-wrap .reelbtn-green[style*="absolute"]{margin-top:2px!important}
+    .logos-strip{margin-top:48px}
+    /* 4. segunda leva de reels: menos espaco vertical */
+    .reels-cont{padding-top:8px}
+    .phonerow{gap:16px 14px;margin-top:0}
+    /* 5. alcance: logo no canto sup-esquerdo + numeros maiores preenchendo o card */
+    .card{position:relative;padding:22px 22px 24px}
+    .card .ic{position:absolute;top:20px;left:20px;width:46px;height:46px;margin:0}
+    .card .ic svg{width:24px;height:24px}
+    .card h3{margin:0 0 22px 62px;min-height:46px;display:flex;align-items:center}
+    .card .stat{margin:18px 0}
+    .card .stat .n{font-size:42px}
+    /* 6. cursos: fonte menor pra caber os topicos sem quebra */
+    .two .checklist li{font-size:13px;padding-top:5px;padding-bottom:5px}
+    /* 7. cursos: badge +21.000 centralizado embaixo do celular (nao torto) */
+    .fphone{display:flex;flex-direction:column;align-items:center}
+    .fphone .phone-badge{position:static;transform:none;display:inline-block;margin:16px auto 0;white-space:normal}
+    /* 8 + 9. ofertas: logos marketplace centralizadas (celulares no fim via .two .duo) */
+    .marketplace-logos{justify-content:center}
+    /* 11. como trabalhar: foto pequena entre titulo e cards */
+    .two .cw-portrait{display:none}
+    .mob-photo{display:flex!important}
+  }
+  .mob-photo{display:none;width:150px;margin:6px auto 26px}
 </style>
 </head>
 <body>
@@ -538,7 +573,7 @@
   </section>
 
   <!-- 8 COMO JÁ CRIAMOS (2) -->
-  <section class="sec tint-b" data-nav>
+  <section class="sec tint-b reels-cont" data-nav>
     <div class="wrap">
       <div class="phonerow">
         <div class="reelcard rv d1"><a class="phone" href="https://www.instagram.com/reel/Cu4InyhuNYD/" target="_blank" rel="noopener"><img src="assets/reel8-1.webp" alt="Reel"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a><a class="reelbtn" href="https://www.instagram.com/reel/Cu4InyhuNYD/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reels</a></div>
@@ -680,12 +715,13 @@
       <div>
         <span class="kick rv">Dois caminhos</span>
         <h2 class="h2 display rv" style="margin-bottom:20px">COMO <em>TRABALHAR</em> COM A GENTE</h2>
+        <div class="portrait mob-photo rv d1"><span class="arch p"></span><img src="assets/day-cut-acao.png" alt="Dayane Dos Anjos"></div>
         <div class="labelrow">
           <div class="lb rv d1"><h3>Ação de Impacto</h3><p>Rápida, direta e pensada para gerar alcance em curto prazo, com entregas pontuais, focada em branding.</p></div>
           <div class="lb rv d2"><h3>Projeto Personalizado</h3><p>Uma construção contínua de relacionamento com a audiência, fortalecendo a marca ao longo do tempo, focada em conversão.</p></div>
         </div>
       </div>
-      <div class="portrait rv d1" data-par="-14">
+      <div class="portrait cw-portrait rv d1" data-par="-14">
         <span class="rings"></span><span class="arch p"></span>
         <i class="cf dot a"></i><span class="cf hollow b"></span>
         <img src="assets/day-cut-acao.png" alt="Dayane Dos Anjos">
