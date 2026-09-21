@@ -366,7 +366,8 @@
   /* ==== Ajustes mobile (sobreposicao/alinhamento) — set/2026 ==== */
   @media(max-width:600px){
     /* CTA: e-mail longo estava esticando a coluna e gerando scroll horizontal */
-    .contacts a{max-width:100%;box-sizing:border-box;font-size:13.5px;overflow-wrap:break-word;gap:10px;padding:13px 16px}
+    .contacts a{max-width:100%;box-sizing:border-box;font-size:13.5px;overflow-wrap:break-word;gap:11px;padding:13px 16px;justify-content:flex-start;text-align:left}
+    .contacts a svg{align-self:center}
     .cta h2{font-size:clamp(34px,10vw,44px);line-height:1.04;overflow-wrap:break-word;max-width:100%}
     /* AS OFERTAS: os 2 celulares (absolutos + rotacionados) invadiam o titulo abaixo */
     .two .duo{width:min(62vw,230px);margin:0 auto 104px}
