@@ -426,6 +426,8 @@
     .two .checklist li{font-size:13px;padding-top:12px;padding-bottom:12px;min-height:48px;display:flex;align-items:center}
     .listemoji{gap:10px}
     .listemoji li{padding-top:12px;padding-bottom:12px}
+    /* CTA: espaco no fim pros botoes flutuantes (PDF/WhatsApp) nao cobrirem o cartao do e-mail */
+    .cta .contacts{margin-bottom:96px}
     /* lote 4: topicos com mesma altura e respiro entre eles (inline-block anulava o gap) */
     .two .checklist{display:inline-flex;flex-direction:column;gap:14px}
     .two .checklist li,.checklist li,.listemoji li{min-height:70px;display:flex;align-items:center}
@@ -982,7 +984,9 @@
   function tick(){
     var st=scrollY||document.documentElement.scrollTop, vh=innerHeight, h=document.documentElement.scrollHeight-vh;
     progress.style.width=(h>0?st/h*100:0)+'%';
-    revs.forEach(function(el){if(inView(el))el.classList.add('in');});
+    // no fim da pagina o ultimo bloco (contatos do CTA) nunca chegava a 86% da tela -> revela tudo que esta visivel
+    var atEnd=st>=h-80;
+    revs.forEach(function(el){if(inView(el,atEnd?1:.86))el.classList.add('in');});
     pars.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom>0&&r.top<vh){var f=+el.getAttribute('data-par');var prog=(r.top+r.height/2-vh/2)/vh;el.style.transform='translateY('+(prog*f)+'px)';}});
     // counters per section
     maybeCount('#alcance','alc');
