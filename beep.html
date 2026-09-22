@@ -351,8 +351,8 @@
   .contacts a .ct{display:flex;flex-direction:column;min-width:0;text-align:left}
   .contacts a .ct b{font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:2px}
   .contacts a .ct .v{color:#fff;font-weight:600;font-size:clamp(14px,1.7vw,18px);line-height:1.25;overflow-wrap:anywhere}
-  .cta-portrait{justify-self:center}
-  @media(max-width:860px){.cta .wrap{grid-template-columns:1fr;text-align:center}.cta-portrait{order:-1;width:min(58vw,230px)}.contacts{align-items:stretch;margin-left:auto;margin-right:auto}}
+  .cta-portrait{justify-self:center;width:clamp(172px,21.8vw,270px)}
+  @media(max-width:860px){.cta .wrap{grid-template-columns:1fr;text-align:center}.cta-portrait{order:-1;width:clamp(150px,21.8vw,270px)}.contacts{align-items:stretch;margin-left:auto;margin-right:auto}}
 
   /* chrome: progress, dots, fabs */
   .progress{position:fixed;top:0;left:0;height:4px;width:0;z-index:60;background:linear-gradient(90deg,var(--magenta2),var(--pink));box-shadow:0 0 12px rgba(224,90,156,.7)}
@@ -440,6 +440,7 @@
     .two .cw-portrait{display:none}
     .mob-photo{display:flex!important}
     .inv-portrait{width:150px!important;margin:2px auto 20px}
+    .cta-portrait{width:98px!important}
   }
   .mob-photo{display:none;width:150px;margin:6px auto 26px}
 
