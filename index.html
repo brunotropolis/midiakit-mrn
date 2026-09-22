@@ -337,6 +337,9 @@
   .cta .shard{position:absolute;inset:0;z-index:0}
   .cta .p1{position:absolute;inset:0;background:linear-gradient(160deg,#5a1a86,#3d1152);clip-path:polygon(0 0,60% 0,40% 100%,0 100%)}
   .cta .p2{position:absolute;inset:0;background:linear-gradient(200deg,#c62a80,#8e1c63);clip-path:polygon(60% 0,100% 0,100% 100%,42% 100%)}
+  /* CTA: sem a fresta escura entre as faixas, transicao suave roxo->magenta */
+  .cta .p1{background:linear-gradient(110deg,#5a1a86 0%,#4a1670 30%,#7a1c6e 50%,#a8246f 68%,#c62a80 100%);clip-path:none}
+  .cta .p2{display:none}
   .cta .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr .8fr;gap:30px;align-items:center;width:100%}
   .cta h2{font-size:clamp(46px,9vw,120px);color:#fff}
   .cta h2 em{color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.28)}
@@ -817,7 +820,7 @@
       </div>
       <div class="portrait cta-portrait rv" data-par="-14">
         <span class="rings"></span><span class="arch m"></span>
-        <img src="assets/day-cut-quem.png" alt="Dayane Dos Anjos">
+        <img src="assets/day-cut-criar.png" alt="Dayane Dos Anjos">
       </div>
     </div>
   </section>
