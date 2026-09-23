@@ -205,7 +205,7 @@
   .chip-hl{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3)}
   .chip-hl b{color:#fff;text-shadow:0 2px 16px rgba(255,255,255,.3)}
   .chip-hl span{color:#e8d4f0}
-  .phone-badge{position:absolute;bottom:8%;right:-22%;z-index:2;transform:rotate(-11deg);background:linear-gradient(135deg,#5a1a6e,#3d1152);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 8px 28px rgba(0,0,0,.4);animation:none;text-align:center;white-space:nowrap;padding:12px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.15)}
+  .phone-badge{position:absolute;bottom:8%;right:-22%;z-index:2;transform:rotate(-11deg);background-color:#4b1660;background-image:linear-gradient(135deg,#5a1a6e,#3d1152);box-shadow:0 8px 28px rgba(0,0,0,.4);animation:none;text-align:center;white-space:nowrap;padding:12px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.15)}
 
   /* botão reel verde pulsando (seção Para Quem) */
   .reelbtn-green{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15px;color:#07341a;background:linear-gradient(135deg,#16a34a,#22c55e);padding:13px 24px;border-radius:999px;box-shadow:0 8px 24px rgba(34,197,94,.45);transition:transform .2s,box-shadow .2s;white-space:nowrap;animation:pulse-green 2.4s ease-in-out infinite}
@@ -350,7 +350,8 @@
   .contacts a .ci svg{width:22px;height:22px;fill:var(--pink)}
   .contacts a .ct{display:flex;flex-direction:column;min-width:0;text-align:left}
   .contacts a .ct b{font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:2px}
-  .contacts a .ct .v{color:#fff;font-weight:600;font-size:clamp(14px,1.7vw,18px);line-height:1.25;overflow-wrap:anywhere}
+  .contacts{max-width:520px}
+  .contacts a .ct .v{color:#fff;font-weight:600;font-size:clamp(14px,1.25vw,17px);line-height:1.25;white-space:nowrap}
   .cta-portrait{justify-self:center;width:clamp(172px,21.8vw,270px)}
   @media(max-width:860px){.cta .wrap{grid-template-columns:1fr;text-align:center}.cta-portrait{order:-1;width:clamp(150px,21.8vw,270px)}.contacts{align-items:stretch;margin-left:auto;margin-right:auto}}
 
@@ -426,6 +427,11 @@
     .two .checklist li{font-size:13px;padding-top:12px;padding-bottom:12px;min-height:48px;display:flex;align-items:center}
     .listemoji{gap:10px}
     .listemoji li{padding-top:12px;padding-bottom:12px}
+    /* e-mail numa linha so no celular */
+    .contacts a{padding:12px 13px;gap:10px}
+    .contacts a .ci{width:38px;height:38px}
+    .contacts a .ci svg{width:19px;height:19px}
+    .contacts a .ct .v{font-size:min(15px,3.05vw);white-space:nowrap}
     /* CTA: espaco no fim pros botoes flutuantes (PDF/WhatsApp) nao cobrirem o cartao do e-mail */
     .cta .contacts{margin-bottom:96px}
     /* lote 4: topicos com mesma altura e respiro entre eles (inline-block anulava o gap) */
@@ -911,7 +917,7 @@
           </a>
           <a class="rv d2" href="mailto:assessoria@manualdorecemnascido.com.br">
             <span class="ci"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg></span>
-            <span class="ct"><b>E-mail</b><span class="v">assessoria@<wbr>manualdorecemnascido.com.br</span></span>
+            <span class="ct"><b>E-mail</b><span class="v">assessoria@manualdorecemnascido.com.br</span></span>
           </a>
         </div>
       </div>
