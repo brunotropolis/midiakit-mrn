@@ -463,18 +463,17 @@
   /* thumb do reel: moldura em gradiente + glow + selo de play */
   .beep-screen{position:relative;display:block;width:100%;max-width:270px;border-radius:30px;padding:6px;background:linear-gradient(150deg,var(--pink),var(--magenta2) 46%,#5a1a86);box-shadow:0 22px 46px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.07);transition:transform .35s cubic-bezier(.16,.8,.3,1),box-shadow .35s}
   .beep-screen::before{content:"";position:absolute;inset:-2px;border-radius:32px;padding:2px;background:linear-gradient(150deg,rgba(255,255,255,.5),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.7}
-  .beep-screen::after{content:"";position:absolute;right:14px;bottom:14px;width:46px;height:46px;border-radius:50%;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a01e69'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") 54% 50%/20px no-repeat;box-shadow:0 8px 22px rgba(0,0,0,.5),0 0 0 4px rgba(224,90,156,.28);transition:transform .35s}
   .beep-screen:hover{transform:translateY(-8px);box-shadow:0 30px 62px rgba(0,0,0,.6),0 14px 42px rgba(224,90,156,.4)}
-  .beep-screen:hover::after{transform:scale(1.12)}
   .beep-screen img{display:block;width:100%;height:auto;border-radius:24px}
   /* intro centralizada + rotulo de exemplo por video */
   .beep-lead{text-align:center}
   .beep-lead .body{max-width:56ch;margin:18px auto 0;text-wrap:pretty}
-  .beep-eg{color:#e7d0ee;font-size:14px;line-height:1.5;max-width:34ch;text-wrap:pretty}
+  .beep-eg{color:#e7d0ee;font-size:14px;line-height:1.5;max-width:34ch;text-wrap:pretty;background:linear-gradient(165deg,rgba(224,90,156,.13),rgba(255,255,255,.03));border:1px solid rgba(224,90,156,.3);border-radius:16px;padding:16px 20px;box-shadow:0 10px 26px rgba(0,0,0,.25)}
   .beep-eg b{color:#fff;font-weight:600}
   .beep-pack{max-width:660px;margin:40px auto 0;background:linear-gradient(165deg,#33113f,#1e0930);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:clamp(26px,4vw,44px)}
   .beep-pack .checklist{max-width:none}
-  .beep-pack .checklist li{font-size:15px}
+  .beep-pack .checklist li{font-size:15px;text-align:center;padding:15px 24px}
+  .beep-pack .checklist li::before{display:none}
   .beep-price{margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);text-align:center}
   .beep-price .old{display:inline-block;color:#a98ab8;text-decoration:line-through;font-weight:600;font-size:16px;margin-bottom:4px}
   .beep-price .bignum{font-size:clamp(52px,11vw,92px)}
@@ -853,7 +852,8 @@
       <div class="sechead beep-lead">
         <span class="kick rv">Projeto Personalizado · Beep Saúde</span>
         <h2 class="h2 display rv">AUTORIDADE QUE <em>VIRA AÇÃO</em></h2>
-        <p class="body rv d1">A Day não só informa, ela ativa. Já colocou de pé ações especiais junto com marcas, e o formato se adapta ao seu objetivo: uma ativação direta, com cupom de desconto para gerar venda na hora, ou uma isca de conteúdo, que entrega valor primeiro e abre uma janela para ativar a audiência depois. Nos dois caminhos, a sua marca entra numa conversa que a mãe já acompanha e confia.</p>
+        <p class="body rv d1">A Day não só informa, ela ativa. Já trabalhou no segmento e tem experiência em ações especiais junto com marcas, sempre no tom próximo que a mãe acompanha e confia.</p>
+        <p class="body rv d2">E o formato se adapta ao seu objetivo: uma ativação de leads através de gatilhos de oportunidade e desconto, ou uma isca de conteúdo, que entrega valor primeiro e abre uma janela para ativar a audiência depois.</p>
       </div>
       <div class="beep-reels">
         <div class="beep-reel rv d1">
@@ -863,7 +863,7 @@
         </div>
         <div class="beep-reel rv d2">
           <a class="beep-screen" href="https://www.instagram.com/reel/C30ZhyiODZ5/" target="_blank" rel="noopener"><img src="assets/beep-reel-2.jpg" alt="Exemplo de ativação"></a>
-          <p class="beep-eg"><b>Exemplo 2 · Ativação direta</b><br>Cupom exclusivo dentro do conteúdo para gerar venda na hora.</p>
+          <p class="beep-eg"><b>Exemplo 2 · Ativação direta</b><br>Gatilhos de oportunidade e desconto dentro do conteúdo para captar e ativar leads.</p>
           <a class="reelbtn-green" href="https://www.instagram.com/reel/C30ZhyiODZ5/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a>
         </div>
       </div>
@@ -873,24 +873,24 @@
   <!-- ===== BEEP · TELA 3 (pacote 3 meses) ===== -->
   <section class="sec tint-d" data-nav>
     <div class="wrap">
-      <div class="sechead">
+      <div class="sechead beep-lead">
         <span class="kick rv">Projeto Personalizado · Beep Saúde</span>
         <h2 class="h2 display rv">PACOTE BEEP <em>· 3 MESES</em></h2>
       </div>
       <div class="beep-pack rv d1">
         <ul class="checklist">
-          <li>1 Reel por mês somado a um combo de Stories</li>
+          <li>01 Reel / TikTok por mês</li>
+          <li>01 combo de Stories por mês</li>
           <li>Todos os reels com automação de captação e ativação</li>
           <li>Reels em collab com a @beepsaude</li>
           <li>Ativação nos nossos grupos de ofertas</li>
           <li>Ativação na área de membros dos cursos</li>
-          <li>Possibilidade de patrocínio da marca nos reels</li>
+          <li>Possibilidade de impulsionamento da marca nos reels</li>
           <li>Exclusividade no segmento de vacinas por 3 meses</li>
         </ul>
         <div class="beep-price">
           <span class="old">de R$ 12.000</span>
           <div class="bignum"><span class="cur">R$</span>10.800</div>
-          <small>no pacote de 3 meses · 10% de desconto</small>
         </div>
       </div>
     </div>
