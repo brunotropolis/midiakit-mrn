@@ -1,9 +1,33 @@
 <!DOCTYPE html>
+<!--
+  ============================================================================
+  BASE DE PROPOSTA POR MARCA  (mídia kit MRN / Dayane Dos Anjos)
+  Clonada da versão Beep Saúde. NÃO editar esta base direto: copiar e preencher.
+
+  Como criar uma proposta nova:
+    cp marca-base.html <marca>.html   (ex: nestle.html)
+  e trocar os placeholders {{...}}:
+    {{NOME_MARCA}}     nome por extenso (ex: Beep Saúde)
+    {{MARCA}}          nome curto p/ o título do pacote (ex: BEEP)
+    {{MARCA_IG}}       @ do Instagram da marca (ex: beepsaude)
+    {{SEGMENTO}}       segmento da exclusividade (ex: vacinas)
+    {{HEADLINE ...}}   headline da home (2 partes: linha + destaque em rosa)
+    {{Parágrafo 1/2}}  copy da home no tom do site (sem números/termos técnicos como prova)
+    {{REEL_ID_1/2}}    IDs dos 2 reels de exemplo do Instagram
+    {{PRECO_CHEIO}} / {{PRECO}}   valores do pacote
+  Assets a colocar em assets/ (git push manual, não vão pelo publicar):
+    logo-MARCA.jpg     logo da marca em círculo branco (~120px)
+    MARCA-reel-1.jpg / MARCA-reel-2.jpg   capas dos 2 reels (og:image do IG)
+  Depois: gerar o PDF -> cd .. && python build_pdf.py <marca>.html <marca>-2026.pdf
+  e apontar o botão "Baixar PDF" abaixo (href) para <marca>-2026.pdf.
+  Fonte de verdade da receita: midiakit-mrn/CLAUDE.md (seção Projeto Personalizado).
+  ============================================================================
+-->
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MÍDIA KIT · PROJETO BEEP SAÚDE | DAYANE DOS ANJOS</title>
+<title>MÍDIA KIT · PROJETO {{NOME_MARCA}} | DAYANE DOS ANJOS</title>
 <meta name="description" content="Mídia kit do Manual do Recém-Nascido, Dayane Dos Anjos. Conteúdo real para uma maternidade real.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1a0729">
@@ -840,7 +864,7 @@
     </div>
   </section>
 
-  <!-- ===== BEEP · HOME (projeto personalizado) ===== -->
+  <!-- ===== MARCA · HOME (projeto personalizado) — TROCAR por marca ===== -->
   <section class="sec tint-b" data-nav>
     <div class="wrap two">
       <div class="portrait beep-home-portrait rv d1" data-par="-14">
@@ -850,60 +874,60 @@
         <span class="kick beep-home-kick">Projeto Personalizado</span>
       </div>
       <div>
-        <span class="brandlogo rv"><img src="assets/logo-beepi.jpg" alt="Beep Saúde"><b>Beep Saúde</b></span>
-        <h2 class="h2 display rv beep-hometitle">SAÚDE QUE CHEGA EM CASA, <em>CONTEÚDO QUE CHEGA NA MÃE</em></h2>
-        <p class="body rv d1">A Beep leva saúde para dentro de casa, e a nossa comunidade é feita de mães que estão vivendo exatamente esse momento: querendo entender melhor as questões de vacinas e os cuidados para proteger o bebê com segurança.</p>
-        <p class="body rv d2">Essas mães buscam essa informação com quem elas já confiam, e é aí que a Day entra. Ela transforma o que é técnico numa conversa leve e próxima, no mesmo tom que construiu essa relação todos os dias.</p>
-        <p class="body rv d3">Por unir <strong>informação de verdade com performance</strong>, a Day é a <strong>interlocutora certa</strong> para levar a mensagem da Beep até essa mãe, gerando vínculo com a marca e resultado real.</p>
+        <span class="brandlogo rv"><img src="assets/logo-MARCA.jpg" alt="{{NOME_MARCA}}"><b>{{NOME_MARCA}}</b></span>
+        <h2 class="h2 display rv beep-hometitle">{{HEADLINE LINHA 1}}, <em>{{HEADLINE DESTAQUE}}</em></h2>
+        <p class="body rv d1">{{Parágrafo 1: conecte o produto/serviço da marca ao momento que a nossa comunidade (mães de bebês) está vivendo. Sem citar números nem termos técnicos como prova social.}}</p>
+        <p class="body rv d2">{{Parágrafo 2: por que a Day é a ponte — o público busca informação de quem confia, e ela traduz o técnico numa conversa leve e próxima.}}</p>
+        <p class="body rv d3">Por unir <strong>informação de verdade com performance</strong>, a Day é a <strong>interlocutora certa</strong> para levar a mensagem da {{NOME_MARCA}} até essa mãe, gerando vínculo com a marca e resultado real.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== BEEP · TELA 2 (reels de exemplo) ===== -->
+  <!-- ===== MARCA · AUTORIDADE QUE VIRA AÇÃO (2 reels de exemplo) ===== -->
   <section class="sec tint-c" data-nav>
     <div class="wrap">
       <div class="sechead beep-lead">
-        <span class="kick rv">Projeto Personalizado · Beep Saúde</span>
+        <span class="kick rv">Projeto Personalizado · {{NOME_MARCA}}</span>
         <h2 class="h2 display rv">AUTORIDADE QUE <em>VIRA AÇÃO</em></h2>
         <p class="body rv d1">A Day não só informa, ela ativa. Já trabalhou no segmento e tem experiência em ações especiais junto com marcas, sempre no tom próximo que a mãe acompanha e confia.</p>
         <p class="body rv d2">E o formato se adapta ao seu objetivo: uma ativação de leads através de gatilhos de oportunidade e desconto, ou uma isca de conteúdo, que entrega valor primeiro e abre uma janela para ativar a audiência depois.</p>
       </div>
       <div class="beep-reels">
         <div class="beep-reel rv d1">
-          <a class="beep-screen" href="https://www.instagram.com/reel/CygAST1Lto4/" target="_blank" rel="noopener"><img src="assets/beep-reel-1.jpg" alt="Exemplo de ativação"></a>
+          <a class="beep-screen" href="https://www.instagram.com/reel/{{REEL_ID_1}}/" target="_blank" rel="noopener"><img src="assets/MARCA-reel-1.jpg" alt="Exemplo de ativação"></a>
           <p class="beep-eg"><b>Exemplo 1 · Isca de conteúdo</b><br>Entrega valor primeiro e abre a janela para ativar a audiência depois.</p>
-          <a class="reelbtn-green" href="https://www.instagram.com/reel/CygAST1Lto4/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a>
+          <a class="reelbtn-green" href="https://www.instagram.com/reel/{{REEL_ID_1}}/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a>
         </div>
         <div class="beep-reel rv d2">
-          <a class="beep-screen" href="https://www.instagram.com/reel/C30ZhyiODZ5/" target="_blank" rel="noopener"><img src="assets/beep-reel-2.jpg" alt="Exemplo de ativação"></a>
+          <a class="beep-screen" href="https://www.instagram.com/reel/{{REEL_ID_2}}/" target="_blank" rel="noopener"><img src="assets/MARCA-reel-2.jpg" alt="Exemplo de ativação"></a>
           <p class="beep-eg"><b>Exemplo 2 · Ativação direta</b><br>Gatilhos de oportunidade e desconto dentro do conteúdo para captar e ativar leads.</p>
-          <a class="reelbtn-green" href="https://www.instagram.com/reel/C30ZhyiODZ5/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a>
+          <a class="reelbtn-green" href="https://www.instagram.com/reel/{{REEL_ID_2}}/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver reel</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== BEEP · TELA 3 (pacote 3 meses) ===== -->
+  <!-- ===== MARCA · PACOTE (3 meses) ===== -->
   <section class="sec tint-d" data-nav>
     <div class="wrap">
       <div class="sechead beep-lead">
-        <span class="kick rv">Projeto Personalizado · Beep Saúde</span>
-        <h2 class="h2 display rv">PACOTE BEEP <em>· 3 MESES</em></h2>
+        <span class="kick rv">Projeto Personalizado · {{NOME_MARCA}}</span>
+        <h2 class="h2 display rv">PACOTE {{MARCA}} <em>· 3 MESES</em></h2>
       </div>
       <div class="beep-pack rv d1">
         <ul class="checklist">
           <li>01 Reel / TikTok por mês</li>
           <li>01 combo de Stories por mês</li>
           <li>Todos os reels com automação de captação e ativação</li>
-          <li>Reels em collab com a @beepsaude</li>
+          <li>Reels em collab com a @{{MARCA_IG}}</li>
           <li>Ativação nos nossos grupos de ofertas</li>
           <li>Ativação na área de membros dos cursos</li>
           <li>Possibilidade de impulsionamento da marca nos reels</li>
-          <li>Exclusividade no segmento de vacinas por 3 meses</li>
+          <li>Exclusividade no segmento de {{SEGMENTO}} por 3 meses</li>
         </ul>
         <div class="beep-price">
-          <span class="old">de R$ 12.000</span>
-          <div class="bignum"><span class="cur">R$</span>10.800</div>
+          <span class="old">de R$ {{PRECO_CHEIO}}</span>
+          <div class="bignum"><span class="cur">R$</span>{{PRECO}}</div>
         </div>
       </div>
     </div>
@@ -937,7 +961,7 @@
 </main>
 
   <div class="fabs">
-    <a class="fab pdf" href="beep-saude-2026.pdf" download>
+    <a class="fab pdf" href="{{MARCA}}-2026.pdf" download>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       <span class="lbl">Baixar PDF</span>
     </a>
