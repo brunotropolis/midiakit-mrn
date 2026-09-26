@@ -472,13 +472,25 @@
   .beep-eg b{color:#fff;font-weight:600}
   .beep-pack{max-width:660px;margin:40px auto 0;background:linear-gradient(165deg,#33113f,#1e0930);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:clamp(26px,4vw,44px)}
   .beep-pack .checklist{max-width:none}
-  .beep-pack .checklist li{font-size:15px;text-align:center;padding:15px 24px}
+  .beep-pack .checklist li{font-size:15px;text-align:center;padding:15px 24px;display:flex;align-items:center;justify-content:center}
   .beep-pack .checklist li::before{display:none}
   .beep-price{margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);text-align:center}
   .beep-price .old{display:inline-block;color:#a98ab8;text-decoration:line-through;font-weight:600;font-size:16px;margin-bottom:4px}
   .beep-price .bignum{font-size:clamp(52px,11vw,92px)}
   .beep-price small{display:block;font-family:'Poppins';font-weight:600;font-size:12px;letter-spacing:.08em;color:var(--muted);margin-top:10px;text-transform:uppercase}
   @media(max-width:640px){.beep-reels{grid-template-columns:1fr;gap:34px;max-width:320px}}
+  /* home Beep: selo "Projeto Personalizado" sobre a imagem da Day */
+  .beep-home-kick{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);z-index:5;margin:0;white-space:nowrap;background:linear-gradient(135deg,var(--magenta2),var(--magenta));color:#fff;border:1px solid rgba(255,255,255,.3);box-shadow:0 10px 26px rgba(0,0,0,.45)}
+  @media(max-width:600px){
+    /* foto da home menor (base do investimento) + selo caber na largura */
+    .beep-home-portrait{width:158px}
+    .beep-home-kick{bottom:1%;font-size:10px;letter-spacing:.07em;padding:6px 12px}
+    /* foto da capa (hero) um pouco menor pra respiro */
+    .hero .photo{width:min(56vw,258px)}
+    /* CTA final: conteudo a partir do topo (evita a foto transbordar pra cima e cortar) */
+    .cta{align-items:flex-start;padding-top:56px;min-height:auto}
+    .cta-portrait{transform:none!important}
+  }
 </style>
 </head>
 <body>
@@ -831,10 +843,11 @@
   <!-- ===== BEEP · HOME (projeto personalizado) ===== -->
   <section class="sec tint-b" data-nav>
     <div class="wrap two">
-      <div class="portrait rv d1" data-par="-14">
+      <div class="portrait beep-home-portrait rv d1" data-par="-14">
         <span class="rings"></span><span class="arch p"></span>
         <i class="cf dot a"></i><span class="cf hollow b"></span>
         <img src="assets/day-cut-beephome.png" alt="Dayane Dos Anjos">
+        <span class="kick beep-home-kick">Projeto Personalizado</span>
       </div>
       <div>
         <span class="brandlogo rv"><img src="assets/logo-beepi.jpg" alt="Beep Saúde"><b>Beep Saúde</b></span>
